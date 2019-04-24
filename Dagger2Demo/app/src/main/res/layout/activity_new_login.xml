@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:llweiya="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical"
+        tools:context="com.llweiya.ysx.starchef.business.user.view.NewLoginActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txt_register"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    android:gravity="center"
+                    android:text="@string/text_register"
+                    android:textColor="@color/llweiya_text_color_black"
+                    android:textSize="16sp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/txt_say_hello"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:textColor="@color/llweiya_text_color_black"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edt_login_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:hint="@string/hint_login_phone"
+            android:inputType="phone"
+            android:textColor="@color/llweiya_text_color_black"
+            android:textColorHint="@color/llweiya_text_color_gray"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:textCursorDrawable="@drawable/bg_edittext_cursor_color"
+            llweiya:met_clearButton="true"
+            llweiya:met_hideUnderline="false" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edt_login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:hint="@string/hint_login_password"
+            android:textColor="@color/llweiya_text_color_black"
+            android:textColorHint="@color/llweiya_text_color_gray"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:textCursorDrawable="@drawable/bg_edittext_cursor_color"
+            llweiya:met_clearButton="true"
+            llweiya:met_hideUnderline="false" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="40dp">
+
+            <LinearLayout
+                android:id="@+id/llayout_remember_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/image_remember_password"
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/icon_tick_circle_normal" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="@string/text_remember_password"
+                    android:textColor="@color/llweiya_text_color_black"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_forget_password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/text_forget_password"
+                android:textColor="@color/llweiya_text_color_black"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/LlweiyaButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:text="@string/text_login" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/llayout_platform"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:layout_marginBottom="50dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_qq"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/icon_share_qq_round" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/image_wechat"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/icon_share_wechat_round" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/llayout_platform"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginBottom="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_weight="1"
+                    android:background="@color/llweiya_text_color_gray" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:text="@string/text_other_login_way"
+                    android:textColor="@color/llweiya_text_color_gray"
+                    android:textSize="12sp" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="0.5dp"
+                    android:layout_weight="1"
+                    android:background="@color/llweiya_text_color_gray" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</layout>

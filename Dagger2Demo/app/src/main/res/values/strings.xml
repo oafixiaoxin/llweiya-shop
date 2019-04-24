@@ -12,4 +12,17 @@
     <string name="bottom_bar_community">社区</string>
     <string name="bottom_bar_order">订单</string>
     <string name="bottom_bar_mine">我的</string>
+
+    <string name="text_register">注册</string>
+    <string name="text_login">登录</string>
+    <string name="text_say_hello">你好，\n欢迎来到Llweiya-Food</string>
+    <string name="text_forget_password">忘记密码</string>
+    <string name="text_remember_password">记住密码</string>
+    <string name="text_other_login_way">其他登录方式</string>
+    <string name="text_get_verify_code">获取验证码</string>
+
+    <string name="hint_login_phone">请输入手机号码</string>
+    <string name="hint_login_password">密码长度6~20位</string>
+    <string name="hint_verify_code">请输入验证码</string>
+
 </resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:llweiya="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        android:background="@color/white"
+        tools:context="com.llweiya.ysx.starchef.business.user.view.NewRegisterActivity">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize" />
+        
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_register"
+            android:textSize="24sp"
+            android:textColor="@color/llweiya_text_color_black"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="40dp"
+            android:textStyle="bold"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edt_register_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="40dp"
+            android:hint="@string/hint_login_phone"
+            android:inputType="phone"
+            android:textColor="@color/llweiya_text_color_black"
+            android:textColorHint="@color/llweiya_text_color_gray"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:textCursorDrawable="@drawable/bg_edittext_cursor_color"
+            llweiya:met_clearButton="true"
+            llweiya:met_hideUnderline="false" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/edt_verify_code"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="100dp"
+                android:hint="@string/hint_verify_code"
+                android:textColor="@color/llweiya_text_color_black"
+                android:textColorHint="@color/llweiya_text_color_gray"
+                android:inputType="number"
+                android:textSize="14sp"
+                android:maxLength="4"
+                android:textCursorDrawable="@drawable/bg_edittext_cursor_color"
+                llweiya:met_clearButton="false"
+                llweiya:met_hideUnderline="true" />
+
+            <TextView
+                android:id="@+id/txt_get_verify_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_get_verify_code"
+                android:textColor="@color/card_orange"
+                android:textSize="16sp"/>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/llweiya_text_color_gray"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edt_register_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="40dp"
+            android:hint="@string/hint_login_password"
+            android:textColor="@color/llweiya_text_color_black"
+            android:textColorHint="@color/llweiya_text_color_gray"
+            android:textSize="14sp"
+            android:maxLines="1"
+            android:textCursorDrawable="@drawable/bg_edittext_cursor_color"
+            llweiya:met_clearButton="true"
+            llweiya:met_hideUnderline="false" />
+
+        <Button
+            android:id="@+id/btn_register"
+            style="@style/LlweiyaButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:text="@string/text_register" />
+
+        <TextView
+            android:id="@+id/txt_user_protocal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
+            android:gravity="center"
+            android:textSize="11sp"
+            android:textColor="@color/llweiya_text_color_gray"/>
+
+    </LinearLayout>
+
+</layout>

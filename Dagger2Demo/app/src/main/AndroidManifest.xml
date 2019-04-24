@@ -32,10 +32,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" />
-
-        <!--.business.user.view.LoginActivity-->
-        <activity android:name=".business.maintab.view.MainTabActivity"
+        <!-- .business.user.view.LoginActivity -->
+        <activity
+            android:name=".business.maintab.view.MainTabActivity"
             android:theme="@style/MainTabTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -119,6 +118,12 @@
         <activity android:name=".business.user.view.CardStackActivity" />
         <activity android:name=".business.dependency.view.RecordActivity" />
         <activity android:name=".business.dependency.view.AllLocalVideosActivity" />
+        <activity
+            android:name=".business.user.view.NewLoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".business.user.view.NewRegisterActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />/>
     </application>
 
 </manifest>
