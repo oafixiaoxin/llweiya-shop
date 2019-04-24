@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lpmas="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/rlayout_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.llweiya.ysx.starchef.business.user.view.LoginActivity">
+
+        <TextView
+            android:id="@+id/txt_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar
+            android:id="@+id/mpb_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btn_tetst"
+            android:layout_gravity="end|top"
+            android:layout_marginTop="28dp"
+            android:indeterminate="false"
+            style="@style/Widget.MaterialProgressBar.ProgressBar"/>
+
+        <TextView
+            android:id="@+id/txt_skip"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:layout_below="@+id/btn_tetst"
+            android:text="跳过"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+        <Button
+            android:id="@+id/btn_open_video_collection"
+            android:layout_width="100dp"
+            android:layout_height="48dp"
+            android:layout_below="@+id/btn_tetst"
+            android:layout_toRightOf="@id/txt_skip"
+            android:layout_marginLeft="12dp"
+            android:text="选择视频"
+            android:textSize="16sp"
+            android:textColor="#000000"
+            android:gravity="center"/>
+
+        <!--<cn.bingoogollpmasle.badgeview.BGABadgeImageView-->
+            <!--android:id="@+id/bga_iv"-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:layout_below="@id/txt_test"-->
+            <!--android:layout_centerHorizontal="true"-->
+            <!--lpmas:badge_bgColor="#F7232F"/>-->
+
+        <Button
+            android:id="@+id/btn_tetst"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:text="jump"/>
+
+        <Button
+            android:id="@+id/btn_change_night_mode"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            android:layout_toRightOf="@id/btn_tetst"
+            android:layout_alignTop="@id/btn_tetst"
+            android:text="change night mode"/>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/course_tips_view"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_below="@id/txt_test"
+            lpmas:cardCornerRadius="4dp"
+            lpmas:cardElevation="0dp"
+            android:alpha="0.8">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:background="#e0000000">
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:orientation="horizontal"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_below="@id/txt_test">
+
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="54dp"
+                android:layout_marginLeft="16dp"
+                android:layout_gravity="center_vertical"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="21dp"
+                android:layout_gravity="center_vertical"
+                android:textSize="14sp"
+                android:textColor="#ffffff"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="黑夜就是我的面纱"/>
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/bg_evaluate"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="8dp"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/button_clock"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:text="clock"/>
+
+        <Button
+            android:id="@+id/btn_retycler_view"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="卡片层叠"/>
+
+        <Button
+            android:id="@+id/btn_record"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:text="录音"
+            android:layout_toRightOf="@id/btn_retycler_view"/>
+
+        <ImageView
+            android:id="@+id/image_orientation"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_below="@id/btn_open_video_collection"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_change_orientation"/>
+        
+    </RelativeLayout>
+
+</layout>

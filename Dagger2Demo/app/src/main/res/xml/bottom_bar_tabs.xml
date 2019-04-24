@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/home"
+        title="@string/bottom_bar_home"
+        inActiveColor="@color/llweiya_text_color_gray"
+        activeColor="@color/llweiya_main_color" />
+    <tab
+        id="@+id/tab_favorite"
+        icon="@drawable/favorite"
+        title="@string/bottom_bar_favorite"
+        inActiveColor="@color/llweiya_text_color_gray"
+        activeColor="@color/llweiya_main_color"/>
+    <tab
+        id="@+id/tab_community"
+        icon="@drawable/community"
+        title="@string/bottom_bar_community"
+        inActiveColor="@color/llweiya_text_color_gray"
+        activeColor="@color/llweiya_main_color"/>
+    <tab
+        id="@+id/tab_order"
+        icon="@drawable/order"
+        title="@string/bottom_bar_order"
+        inActiveColor="@color/llweiya_text_color_gray"
+        activeColor="@color/llweiya_main_color"/>
+    <tab
+        id="@+id/tab_mine"
+        icon="@drawable/mine"
+        title="@string/bottom_bar_mine"
+        inActiveColor="@color/llweiya_text_color_gray"
+        activeColor="@color/llweiya_main_color"/>
+</tabs>
