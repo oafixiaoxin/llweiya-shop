@@ -13,6 +13,8 @@
 
     <color name="llweiya_text_color_black">#000000</color>
     <color name="llweiya_text_color_gray">#ACACAC</color>
+    <color name="llweiya_text_color_subtitle">#8F000000</color>
+    <color name="llweiya_item_8dp">#F7F7F7</color>
     <color name="llweiya_main_color">#FADB4A</color>
 
     <color name="card_orange">#F9B032</color>

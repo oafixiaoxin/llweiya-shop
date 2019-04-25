@@ -100,6 +100,8 @@ dependencies {
     api 'com.githang:status-bar-compat:0.5.2'
 
     api 'com.rengwuxian.materialedittext:library:2.1.4'
+
+    api 'de.hdodenhof:circleimageview:3.0.0'
 }
 
 import org.aspectj.bridge.IMessage
