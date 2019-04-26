@@ -19,7 +19,7 @@ import com.llweiya.ysx.starchef.databinding.FragmentUserInfoBinding;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserInfoFragment extends Fragment implements View.OnClickListener {
+public class UserInfoFragment extends Fragment {
 
     private FragmentUserInfoBinding binding;
 
@@ -55,7 +55,7 @@ public class UserInfoFragment extends Fragment implements View.OnClickListener {
             R.drawable.icon_config_shop
     };
 
-    private boolean hasLogin = true;
+    private boolean hasLogin = false;
 
     private String[] configTitles = {"卡券", "收藏", "钱包", "商城"};
     private String[] titles1 = {"会员", "地址", "足迹", "评价"};
@@ -93,7 +93,7 @@ public class UserInfoFragment extends Fragment implements View.OnClickListener {
     }
 
     private void addListener() {
-        binding.txtNotLogin.setOnClickListener(this);
+        binding.txtNotLogin.setOnClickListener(v -> toLoginPage());
     }
 
     private void initAdapter() {
@@ -151,12 +151,8 @@ public class UserInfoFragment extends Fragment implements View.OnClickListener {
         }
     }
 
-    @Override
-    public void onClick(View view) {
-        int viewId = view.getId();
-        if (viewId == R.id.txt_not_login) {
-            Intent intent = new Intent(getActivity(), NewLoginActivity.class);
-            getActivity().startActivity(intent);
-        }
+    private void toLoginPage() {
+        Intent intent = new Intent(getActivity(), NewLoginActivity.class);
+        getActivity().startActivity(intent);
     }
 }

@@ -116,7 +116,7 @@ public abstract class BaseActivity<B extends ViewDataBinding> extends AppCompatA
     @Override
     public synchronized void showProgressView(CharSequence test, boolean cancelable) {
         if (dialog == null) {
-            dialog = new ProgressDialog(this);
+            dialog = new ProgressDialog(this, ProgressDialog.THEME_HOLO_LIGHT);
             dialog.setOnDismissListener(d -> onProgressDismiss());
         }
         dialog.setMessage(test);

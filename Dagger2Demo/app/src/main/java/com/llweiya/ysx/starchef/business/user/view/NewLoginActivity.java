@@ -46,6 +46,7 @@ public class NewLoginActivity extends BaseActivity<ActivityNewLoginBinding> {
                 viewBinding.imageRememberPassword.setImageDrawable(getResources().getDrawable(R.drawable.icon_tick_circle_normal));
             }
         });
+        viewBinding.btnLogin.setOnClickListener(v -> showProgressView("llweiya", true));
     }
 
     @Override
