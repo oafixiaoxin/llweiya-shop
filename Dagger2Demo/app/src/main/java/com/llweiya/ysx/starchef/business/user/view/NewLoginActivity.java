@@ -4,13 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.annotation.apt.LlweiyaRouter;
 import com.llweiya.ysx.starchef.R;
+import com.llweiya.ysx.starchef.aop.RouterConfig;
 import com.llweiya.ysx.starchef.business.user.injection.DaggerUserComponent;
 import com.llweiya.ysx.starchef.common.application.LlweiyaApp;
 import com.llweiya.ysx.starchef.common.utils.UIUtil;
 import com.llweiya.ysx.starchef.common.view.BaseActivity;
 import com.llweiya.ysx.starchef.databinding.ActivityNewLoginBinding;
 
+@LlweiyaRouter(RouterConfig.NEWLOGIN)
 public class NewLoginActivity extends BaseActivity<ActivityNewLoginBinding> {
 
     private boolean rememberPwd = false;

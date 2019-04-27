@@ -11,10 +11,12 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.llweiya.ysx.starchef.R;
+import com.llweiya.ysx.starchef.aop.RouterConfig;
 import com.llweiya.ysx.starchef.business.user.model.CommonItemModel;
 import com.llweiya.ysx.starchef.business.user.view.adapter.CommonItemAdapter;
 import com.llweiya.ysx.starchef.business.user.view.adapter.ConfigItemAdapter;
 import com.llweiya.ysx.starchef.databinding.FragmentUserInfoBinding;
+import com.lpmas.apt.LWRouter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -152,7 +154,6 @@ public class UserInfoFragment extends Fragment {
     }
 
     private void toLoginPage() {
-        Intent intent = new Intent(getActivity(), NewLoginActivity.class);
-        getActivity().startActivity(intent);
+        LWRouter.go(getActivity(), RouterConfig.NEWLOGIN);
     }
 }
