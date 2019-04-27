@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.view.KeyEvent;
 
 import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.business.community.view.CommunityMainFragment;
@@ -20,6 +21,7 @@ import java.util.List;
 import timber.log.Timber;
 
 public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
+    private double exitTime = 0;
 
     private FragmentStatePagerAdapter pagerAdapter;
 
@@ -86,6 +88,22 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
 
     private void changeCurrentTab(int index) {
         viewBinding.viewPager.setCurrentItem(index, false);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (KeyEvent.KEYCODE_BACK == keyCode) {
+            // 判断是否在两秒之内连续点击返回键，是则退出，否则不退出
+            if (System.currentTimeMillis() - exitTime > 2000) {
+                showToast(getString(R.string.toast_exit_app));
+                // 将系统当前的时间赋值给exitTime
+                exitTime = System.currentTimeMillis();
+            } else {
+                finish();
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override

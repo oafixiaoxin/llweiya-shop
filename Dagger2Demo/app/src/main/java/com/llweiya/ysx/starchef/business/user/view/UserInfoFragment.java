@@ -1,6 +1,5 @@
 package com.llweiya.ysx.starchef.business.user.view;
 
-import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -95,7 +94,7 @@ public class UserInfoFragment extends Fragment {
     }
 
     private void addListener() {
-        binding.txtNotLogin.setOnClickListener(v -> toLoginPage());
+        binding.txtNotLogin.setOnClickListener(v -> LWRouter.go(getActivity(), RouterConfig.NEWLOGIN));
     }
 
     private void initAdapter() {
@@ -151,9 +150,5 @@ public class UserInfoFragment extends Fragment {
             model.icon = getContext().getResources().getDrawable(configIcons[i]);
             gridItems.add(model);
         }
-    }
-
-    private void toLoginPage() {
-        LWRouter.go(getActivity(), RouterConfig.NEWLOGIN);
     }
 }
