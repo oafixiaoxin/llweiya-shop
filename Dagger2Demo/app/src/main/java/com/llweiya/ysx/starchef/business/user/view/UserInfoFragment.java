@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.annotation.aspect.CheckLogin;
 import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.aop.RouterConfig;
 import com.llweiya.ysx.starchef.business.user.model.CommonItemModel;
@@ -95,6 +97,7 @@ public class UserInfoFragment extends Fragment {
 
     private void addListener() {
         binding.txtNotLogin.setOnClickListener(v -> LWRouter.go(getActivity(), RouterConfig.NEWLOGIN));
+        binding.imageChatRoom.setOnClickListener(v -> toChatRoomPage());
     }
 
     private void initAdapter() {
@@ -150,5 +153,10 @@ public class UserInfoFragment extends Fragment {
             model.icon = getContext().getResources().getDrawable(configIcons[i]);
             gridItems.add(model);
         }
+    }
+
+    @CheckLogin
+    private void toChatRoomPage() {
+        Log.e("llweiya >>> ", "to chat room");
     }
 }
