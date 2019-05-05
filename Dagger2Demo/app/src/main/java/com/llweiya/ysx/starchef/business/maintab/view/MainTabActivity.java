@@ -11,6 +11,8 @@ import com.llweiya.ysx.starchef.business.community.view.CommunityMainFragment;
 import com.llweiya.ysx.starchef.business.community.view.FavoriteFragment;
 import com.llweiya.ysx.starchef.business.community.view.HomeFragment;
 import com.llweiya.ysx.starchef.business.order.view.OrderFragment;
+import com.llweiya.ysx.starchef.business.user.model.UserInfoManager;
+import com.llweiya.ysx.starchef.business.user.model.UserInfoModel;
 import com.llweiya.ysx.starchef.business.user.view.UserInfoFragment;
 import com.llweiya.ysx.starchef.common.view.BaseActivity;
 import com.llweiya.ysx.starchef.databinding.ActivityMainTabBinding;
@@ -29,6 +31,14 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
     protected void onCreateSubView(Bundle savedInstanceState) {
         initTabItems();
         addListener();
+
+//        UserInfoModel userInfoModel = new UserInfoModel();
+//        userInfoModel.setUserId(10086);
+//        userInfoModel.setUserName("My Heart Will Go ON");
+//        userInfoModel.setNickname("25岁的土味大叔");
+//        userInfoModel.setSex(1);
+//        userInfoModel.setBirthday("1994-01-09");
+//        UserInfoManager.cacheUserInfo(this, userInfoModel);
     }
 
     private void initTabItems() {

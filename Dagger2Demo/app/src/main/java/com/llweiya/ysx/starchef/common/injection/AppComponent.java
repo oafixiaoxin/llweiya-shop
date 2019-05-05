@@ -2,6 +2,7 @@ package com.llweiya.ysx.starchef.common.injection;
 
 import android.app.Application;
 
+import com.llweiya.ysx.starchef.business.user.model.UserInfoModel;
 import com.llweiya.ysx.starchef.common.api.RetrofitModule;
 
 import javax.inject.Singleton;
@@ -24,6 +25,7 @@ import retrofit2.Retrofit;
 
 public interface AppComponent {
     Application getApplication();
+    UserInfoModel getUserInfoModel();
     Retrofit getRetrofit();
     OkHttpClient getOkHttpClient();
 
