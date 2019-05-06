@@ -33,8 +33,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!-- .business.user.view.LoginActivity -->
+
+        <!-- 全面屏适配，宽高比2.1以下 -->
+        <meta-data
+            android:name="android.max_aspect"
+            android:value="2.1" />
+
         <activity
             android:name=".business.maintab.view.MainTabActivity"
+            android:launchMode="singleTask"
             android:theme="@style/MainTabTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

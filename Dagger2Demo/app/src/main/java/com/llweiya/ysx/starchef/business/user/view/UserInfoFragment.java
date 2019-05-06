@@ -14,6 +14,7 @@ import com.example.annotation.aspect.CheckLogin;
 import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.aop.RouterConfig;
 import com.llweiya.ysx.starchef.business.user.model.CommonItemModel;
+import com.llweiya.ysx.starchef.business.user.model.UserInfoModel;
 import com.llweiya.ysx.starchef.business.user.view.adapter.CommonItemAdapter;
 import com.llweiya.ysx.starchef.business.user.view.adapter.ConfigItemAdapter;
 import com.llweiya.ysx.starchef.databinding.FragmentUserInfoBinding;
@@ -22,7 +23,12 @@ import com.lpmas.apt.LWRouter;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 public class UserInfoFragment extends Fragment {
+
+//    @Inject
+//    UserInfoModel userInfoModel;
 
     private FragmentUserInfoBinding binding;
 
@@ -58,8 +64,6 @@ public class UserInfoFragment extends Fragment {
             R.drawable.icon_config_shop
     };
 
-    private boolean hasLogin = false;
-
     private String[] configTitles = {"卡券", "收藏", "钱包", "商城"};
     private String[] titles1 = {"会员", "地址", "足迹", "评价"};
     private String[] titles2 = {"积分", "帮助", "反馈"};
@@ -80,9 +84,13 @@ public class UserInfoFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_user_info, container, false);
         binding = DataBindingUtil.bind(rootView);
 
-        if (hasLogin) {
+        UserInfoModel user = UserInfoModel.getInstance();
+        if (!user.isGuest()) {
             binding.llayoutHasLogin.setVisibility(View.VISIBLE);
             binding.txtNotLogin.setVisibility(View.GONE);
+
+            binding.txtUsername.setText(user.getNickname());
+            binding.txtUserDescription.setText(user.getUserDescription());
         } else {
             binding.llayoutHasLogin.setVisibility(View.GONE);
             binding.txtNotLogin.setVisibility(View.VISIBLE);
@@ -157,6 +165,6 @@ public class UserInfoFragment extends Fragment {
 
     @CheckLogin
     private void toChatRoomPage() {
-        Log.e("llweiya >>> ", "to chat room");
+
     }
 }

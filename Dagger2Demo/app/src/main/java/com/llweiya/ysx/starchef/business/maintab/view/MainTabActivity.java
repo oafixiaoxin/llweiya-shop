@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.view.KeyEvent;
 
+import com.example.annotation.aspect.CheckLogin;
 import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.business.community.view.CommunityMainFragment;
 import com.llweiya.ysx.starchef.business.community.view.FavoriteFragment;
@@ -32,13 +33,16 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
         initTabItems();
         addListener();
 
-//        UserInfoModel userInfoModel = new UserInfoModel();
-//        userInfoModel.setUserId(10086);
-//        userInfoModel.setUserName("My Heart Will Go ON");
-//        userInfoModel.setNickname("25岁的土味大叔");
-//        userInfoModel.setSex(1);
-//        userInfoModel.setBirthday("1994-01-09");
-//        UserInfoManager.cacheUserInfo(this, userInfoModel);
+        UserInfoModel userInfoModel = UserInfoModel.getInstance();
+        if (userInfoModel.getUserId() == 0) {
+//            userInfoModel.setUserId(10086);
+//            userInfoModel.setUserName("25岁的土味大叔");
+//            userInfoModel.setNickname("My Heart Will Go ON");
+//            userInfoModel.setSex(1);
+//            userInfoModel.setBirthday("1994-01-09");
+//            userInfoModel.setUserDescription("我一生之中最幸运的两s件事，一件是时间终于将我对你的爱消耗殆尽，另一件事，很久很久前有一天，我遇见了你。");
+//            UserInfoManager.cacheUserInfo(this, userInfoModel);
+        }
     }
 
     private void initTabItems() {
@@ -77,13 +81,13 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
                     changeCurrentTab(0);
                     break;
                 case R.id.tab_favorite:
-                    changeCurrentTab(1);
+                    changeCurrentTabNeedLogin(1);
                     break;
                 case R.id.tab_community:
                     changeCurrentTab(2);
                     break;
                 case R.id.tab_order:
-                    changeCurrentTab(3);
+                    changeCurrentTabNeedLogin(3);
                     break;
                 case R.id.tab_mine:
                     changeCurrentTab(4);
@@ -97,6 +101,10 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
     }
 
     private void changeCurrentTab(int index) {
+        viewBinding.viewPager.setCurrentItem(index, false);
+    }
+    @CheckLogin
+    private void changeCurrentTabNeedLogin(int index) {
         viewBinding.viewPager.setCurrentItem(index, false);
     }
 

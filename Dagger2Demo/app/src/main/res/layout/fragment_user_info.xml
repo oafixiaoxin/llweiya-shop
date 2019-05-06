@@ -77,7 +77,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginRight="20dp"
-                            android:text="25岁的土味大叔"
                             android:textSize="22sp"
                             android:textColor="@color/llweiya_text_color_black"
                             android:textStyle="bold"
@@ -92,7 +91,6 @@
                             android:layout_marginRight="20dp"
                             android:maxLines="3"
                             android:ellipsize="end"
-                            android:text="我一生之中最幸运的两件事，一件是时间终于将我对你的爱消耗殆尽，另一件事，很久很久前有一天，我遇见了你。"
                             android:textSize="14sp"
                             android:textColor="@color/llweiya_text_color_subtitle"/>
 

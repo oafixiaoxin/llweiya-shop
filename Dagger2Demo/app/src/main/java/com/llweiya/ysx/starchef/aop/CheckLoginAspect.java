@@ -29,10 +29,9 @@ public class CheckLoginAspect {
     @Around("execution(@com.example.annotation.aspect.CheckLogin * *(..)) && @annotation(checkLogin)")
     public void aroundJoinPoint(ProceedingJoinPoint point, CheckLogin checkLogin) throws Throwable {
         if (userInfoModel.isGuest()) {
-            LWRouter.go(LlweiyaApp.getAppComponent().getApplication(), RouterConfig.NEWLOGIN);
+            LWRouter.go(LlweiyaApp.getCurrentActivity(), RouterConfig.NEWLOGIN);
             return;
         }
-        Log.e("llweiya >>> ", "do something");
         point.proceed();
     }
 }
