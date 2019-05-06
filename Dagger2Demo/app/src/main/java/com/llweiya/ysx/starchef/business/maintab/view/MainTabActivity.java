@@ -35,13 +35,13 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
 
         UserInfoModel userInfoModel = UserInfoModel.getInstance();
         if (userInfoModel.getUserId() == 0) {
-//            userInfoModel.setUserId(10086);
-//            userInfoModel.setUserName("25岁的土味大叔");
-//            userInfoModel.setNickname("My Heart Will Go ON");
-//            userInfoModel.setSex(1);
-//            userInfoModel.setBirthday("1994-01-09");
-//            userInfoModel.setUserDescription("我一生之中最幸运的两s件事，一件是时间终于将我对你的爱消耗殆尽，另一件事，很久很久前有一天，我遇见了你。");
-//            UserInfoManager.cacheUserInfo(this, userInfoModel);
+            userInfoModel.setUserId(10086);
+            userInfoModel.setUserName("25岁的土味大叔");
+            userInfoModel.setNickname("My Heart Will Go ON");
+            userInfoModel.setSex(1);
+            userInfoModel.setBirthday("1994-01-09");
+            userInfoModel.setUserDescription("我一生之中最幸运的两s件事，一件是时间终于将我对你的爱消耗殆尽，另一件事，很久很久前有一天，我遇见了你。");
+            UserInfoManager.cacheUserInfo(this, userInfoModel);
         }
     }
 
@@ -81,13 +81,13 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
                     changeCurrentTab(0);
                     break;
                 case R.id.tab_favorite:
-                    changeCurrentTabNeedLogin(1);
+                    changeCurrentTab(1);
                     break;
                 case R.id.tab_community:
                     changeCurrentTab(2);
                     break;
                 case R.id.tab_order:
-                    changeCurrentTabNeedLogin(3);
+                    changeCurrentTab(3);
                     break;
                 case R.id.tab_mine:
                     changeCurrentTab(4);

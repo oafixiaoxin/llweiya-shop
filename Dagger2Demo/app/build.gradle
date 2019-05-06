@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 28
     defaultConfig {
         applicationId "com.llweiya.ysx.dagger2demo"
-        minSdkVersion 16
-        targetSdkVersion 23
+        minSdkVersion 20
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -105,6 +105,8 @@ dependencies {
     api 'com.rengwuxian.materialedittext:library:2.1.4'
 
     api 'de.hdodenhof:circleimageview:3.0.0'
+
+    compile 'com.github.hackware1993:MagicIndicator:1.6.0'
 }
 
 import org.aspectj.bridge.IMessage

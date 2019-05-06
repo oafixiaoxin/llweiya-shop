@@ -10,12 +10,13 @@
         android:background="@color/white"
         tools:context="com.llweiya.ysx.starchef.business.maintab.view.MainTabActivity">
         
-        <android.support.v4.view.ViewPager
+        <com.llweiya.ysx.starchef.common.NoScrollViewPager
             android:id="@+id/view_pager"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="56dp"
-            android:scrollbars="none" />
+            android:scrollbars="none"
+            llweiya:scrollable="false"/>
 
         <com.roughike.bottombar.BottomBar
             android:id="@+id/bottom_bar"
