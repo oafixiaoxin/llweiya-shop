@@ -15,4 +15,15 @@ public class UIUtil {
         return upArrow;
     }
 
+    /**
+     * 将dip转换为px
+     *
+     * @param context 上下文
+     * @param dp      dp值
+     * @return px值
+     */
+    public static int dip2pixel(Context context, float dp) {
+        return Math.round(context.getResources().getDisplayMetrics().density * dp);
+    }
+
 }

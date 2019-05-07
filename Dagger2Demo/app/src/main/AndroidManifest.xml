@@ -33,7 +33,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!-- .business.user.view.LoginActivity -->
-
         <!-- 全面屏适配，宽高比2.1以下 -->
         <meta-data
             android:name="android.max_aspect"
@@ -130,7 +129,9 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".business.user.view.NewRegisterActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".business.order.view.OrderDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

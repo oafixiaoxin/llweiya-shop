@@ -11,7 +11,7 @@ import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.business.community.view.CommunityMainFragment;
 import com.llweiya.ysx.starchef.business.community.view.FavoriteFragment;
 import com.llweiya.ysx.starchef.business.community.view.HomeFragment;
-import com.llweiya.ysx.starchef.business.order.view.OrderFragment;
+import com.llweiya.ysx.starchef.business.order.view.OrderMainFragment;
 import com.llweiya.ysx.starchef.business.user.model.UserInfoManager;
 import com.llweiya.ysx.starchef.business.user.model.UserInfoModel;
 import com.llweiya.ysx.starchef.business.user.view.UserInfoFragment;
@@ -50,7 +50,7 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
         items.add(HomeFragment.newInstance());
         items.add(FavoriteFragment.newInstance());
         items.add(CommunityMainFragment.newInstance());
-        items.add(OrderFragment.newInstance());
+        items.add(OrderMainFragment.newInstance());
         items.add(UserInfoFragment.newInstance());
 
         pagerAdapter = new FragmentStatePagerAdapter(getSupportFragmentManager()) {
