@@ -40,7 +40,7 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
             userInfoModel.setNickname("My Heart Will Go ON");
             userInfoModel.setSex(1);
             userInfoModel.setBirthday("1994-01-09");
-            userInfoModel.setUserDescription("我一生之中最幸运的两s件事，一件是时间终于将我对你的爱消耗殆尽，另一件事，很久很久前有一天，我遇见了你。");
+            userInfoModel.setUserDescription("我一生之中最幸运的两件事，一件是时间终于将我对你的爱消耗殆尽，另一件事，很久很久前有一天，我遇见了你。");
             UserInfoManager.cacheUserInfo(this, userInfoModel);
         }
     }
