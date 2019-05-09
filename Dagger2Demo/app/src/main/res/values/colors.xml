@@ -16,6 +16,7 @@
     <color name="llweiya_text_color_subtitle">#8F000000</color>
     <color name="llweiya_item_8dp">#F7F7F7</color>
     <color name="llweiya_main_color">#FADB4A</color>
+    <color name="llweiya_divider">#F7F7F7</color>
 
     <color name="card_orange">#F9B032</color>
     <color name="card_light_green">#C6F63A</color>

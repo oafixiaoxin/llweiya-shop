@@ -7,6 +7,7 @@ import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
@@ -21,6 +22,7 @@ import com.llweiya.ysx.starchef.common.injection.AppComponent;
 import com.llweiya.ysx.starchef.common.injection.BaseComponent;
 import com.llweiya.ysx.starchef.common.injection.BaseModule;
 import com.llweiya.ysx.starchef.common.injection.DaggerBaseComponent;
+import com.llweiya.ysx.starchef.common.utils.UIUtil;
 
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -41,6 +43,8 @@ public abstract class BaseActivity<B extends ViewDataBinding> extends AppCompatA
 
     private BaseModule baseModule;
 
+    protected boolean needElevation = true;
+
     @Override
     protected void onCreate(Bundle bundle) {
         initSwipeBackFinish();
@@ -53,6 +57,9 @@ public abstract class BaseActivity<B extends ViewDataBinding> extends AppCompatA
             viewBinding = DataBindingUtil.bind(rootView);
             this.setContentView(rootView);
         }
+
+        setNeedElevation();
+        initActionBar();
 
         onCreateSubView(bundle);
 
@@ -79,9 +86,25 @@ public abstract class BaseActivity<B extends ViewDataBinding> extends AppCompatA
         componentReflectionInjector.inject(this);
     }
 
+    protected void initActionBar() {
+        ActionBar actionBar = getSupportActionBar();
+        if (null != actionBar) {
+            actionBar.setHomeButtonEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                actionBar.setElevation(needElevation ? 1.0f : 0);
+            }
+            actionBar.setHomeAsUpIndicator(UIUtil.actionBarBackArrow(this));
+        }
+    }
+
     public abstract int getLayoutId();
 
     public abstract void injectComponent();
+
+    public void setNeedElevation(){
+
+    }
 
     @Override
     protected void onStart() {

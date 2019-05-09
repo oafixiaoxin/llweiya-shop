@@ -135,7 +135,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity android:name=".business.order.view.PayOrderActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light"/>
+            android:theme="@style/LlweiyaMainTheme"/>
     </application>
 
 </manifest>

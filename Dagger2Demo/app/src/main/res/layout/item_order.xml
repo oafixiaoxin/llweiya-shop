@@ -96,7 +96,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_marginRight="12dp"
                 android:layout_marginTop="16dp"
-                android:background="@color/llweiya_text_color_gray" />
+                android:background="@color/llweiya_divider" />
 
             <LinearLayout
                 android:layout_width="match_parent"

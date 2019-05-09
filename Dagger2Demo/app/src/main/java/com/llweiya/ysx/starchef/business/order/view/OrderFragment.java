@@ -18,6 +18,7 @@ import com.llweiya.ysx.starchef.databinding.FragmentOrderBinding;
 import com.lpmas.apt.LWRouter;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class OrderFragment extends Fragment {
@@ -58,7 +59,9 @@ public class OrderFragment extends Fragment {
         orderItemAdapter.setOnItemClickListener(((adapter, view, position) -> {
             OrderItemViewModel viewModel = (OrderItemViewModel)adapter.getData().get(position);
             if (viewModel.itemStatus.equals(OrderEnum.ORDER_STATUS_WAIT_PAY)) {
-                LWRouter.go(getActivity(), RouterConfig.PAYORDER);
+                HashMap<String, Object> hashMap = new HashMap<>();
+                hashMap.put(RouterConfig.EXTRA_DATA, viewModel);
+                LWRouter.go(getActivity(), RouterConfig.PAYORDER, hashMap);
             } else {
                 LWRouter.go(getActivity(), RouterConfig.ORDERDETAIL);
             }

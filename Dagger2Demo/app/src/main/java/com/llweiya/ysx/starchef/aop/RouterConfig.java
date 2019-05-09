@@ -4,6 +4,10 @@ package com.llweiya.ysx.starchef.aop;
  * 路由跳转
  */
 public class RouterConfig {
+
+    //页面之间传递的参数
+    public static final String EXTRA_DATA = "extra_data";
+
     public static final String NEWLOGIN = "new_login";
     public static final String NEWREGISTER = "new_register";
 

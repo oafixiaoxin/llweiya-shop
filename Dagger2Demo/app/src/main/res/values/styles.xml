@@ -46,4 +46,9 @@
         <item name="actionBarSize">56dp</item>
     </style>
 
+    <style name="LlweiyaMainTheme" parent="Theme.AppCompat.Light">
+        <item name="android:background">@color/white</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
 </resources>

@@ -10,7 +10,8 @@ public class UIUtil {
 
     //图太难看，方法OK
     public static Drawable actionBarBackArrow(Context context) {
-        final Drawable upArrow = context.getResources().getDrawable(R.drawable.ic_actionbar_back);
+        //abc_ic_ab_back_material  系统返回按钮图片
+        final Drawable upArrow = context.getResources().getDrawable(R.drawable.abc_ic_ab_back_material);
         upArrow.setColorFilter(context.getResources().getColor(R.color.llweiya_text_color_black), PorterDuff.Mode.SRC_ATOP);
         return upArrow;
     }
