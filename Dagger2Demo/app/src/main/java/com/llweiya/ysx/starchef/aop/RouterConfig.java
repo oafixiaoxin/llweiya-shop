@@ -8,4 +8,5 @@ public class RouterConfig {
     public static final String NEWREGISTER = "new_register";
 
     public static final String ORDERDETAIL = "order_detail";
+    public static final String PAYORDER = "pay_order";
 }

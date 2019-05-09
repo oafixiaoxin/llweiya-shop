@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.aop.RouterConfig;
 import com.llweiya.ysx.starchef.business.order.model.FoodItemModel;
+import com.llweiya.ysx.starchef.business.order.model.OrderEnum;
 import com.llweiya.ysx.starchef.business.order.model.OrderItemViewModel;
 import com.llweiya.ysx.starchef.business.order.view.adapter.OrderItemAdapter;
 import com.llweiya.ysx.starchef.databinding.FragmentOrderBinding;
@@ -55,7 +56,12 @@ public class OrderFragment extends Fragment {
         orderItemAdapter.setNewData(orderList);
 
         orderItemAdapter.setOnItemClickListener(((adapter, view, position) -> {
-            LWRouter.go(getActivity(), RouterConfig.ORDERDETAIL);
+            OrderItemViewModel viewModel = (OrderItemViewModel)adapter.getData().get(position);
+            if (viewModel.itemStatus.equals(OrderEnum.ORDER_STATUS_WAIT_PAY)) {
+                LWRouter.go(getActivity(), RouterConfig.PAYORDER);
+            } else {
+                LWRouter.go(getActivity(), RouterConfig.ORDERDETAIL);
+            }
         }));
     }
 
@@ -65,13 +71,18 @@ public class OrderFragment extends Fragment {
             OrderItemViewModel viewModel = new OrderItemViewModel();
             viewModel.itemId = String.valueOf(i+1);
             viewModel.itemName = "Llweiya_item_" + (i+1);
-            viewModel.itemStatus = "订单准备中";
             viewModel.totalPrice = "￥100.00";
             if (i == 2 || i == 5) {
                 viewModel.goodsList = buildFoodItemList(5);
+                viewModel.itemStatus = OrderEnum.ORDER_STATUS_FINISH;
             } else if (i == 7) {
                 viewModel.goodsList = buildFoodItemList(1);
+                viewModel.itemStatus = OrderEnum.ORDER_STATUS_WAIT_COMMENT;
+            } else if (i == 6) {
+                viewModel.goodsList = buildFoodItemList(8);
+                viewModel.itemStatus = OrderEnum.ORDER_STATUS_PREPARE;
             } else {
+                viewModel.itemStatus = OrderEnum.ORDER_STATUS_WAIT_PAY;
                 viewModel.goodsList = buildFoodItemList(2);
             }
             orderList.add(viewModel);

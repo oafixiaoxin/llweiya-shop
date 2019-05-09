@@ -8,6 +8,7 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.business.order.model.FoodItemModel;
+import com.llweiya.ysx.starchef.business.order.model.OrderEnum;
 import com.llweiya.ysx.starchef.business.order.model.OrderItemViewModel;
 
 import java.util.ArrayList;
@@ -25,8 +26,17 @@ public class OrderItemAdapter extends BaseQuickAdapter<OrderItemViewModel, BaseV
     @Override
     protected void convert(BaseViewHolder helper, OrderItemViewModel item) {
         helper.setText(R.id.txt_item_name, item.itemName);
-        helper.setText(R.id.txt_item_status, item.itemStatus);
         helper.setText(R.id.txt_item_price, item.totalPrice);
+
+        if (item.itemStatus.equals(OrderEnum.ORDER_STATUS_FINISH)) {
+            helper.setText(R.id.txt_item_status, "订单完成");
+        } else if (item.itemStatus.equals(OrderEnum.ORDER_STATUS_WAIT_COMMENT)) {
+            helper.setText(R.id.txt_item_status, "待评价");
+        } else if (item.itemStatus.equals(OrderEnum.ORDER_STATUS_WAIT_PAY)) {
+            helper.setText(R.id.txt_item_status, "待支付");
+        } else if (item.itemStatus.equals(OrderEnum.ORDER_STATUS_PREPARE)) {
+            helper.setText(R.id.txt_item_status, "订单准备中");
+        }
 
         List<FoodItemModel> tmpList = new ArrayList<>();
         if (item.goodsList.size() > 0) {

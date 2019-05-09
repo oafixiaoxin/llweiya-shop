@@ -130,8 +130,12 @@
         <activity
             android:name=".business.user.view.NewRegisterActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".business.order.view.OrderDetailActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".business.order.view.OrderDetailActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".business.order.view.PayOrderActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light"/>
     </application>
 
 </manifest>
