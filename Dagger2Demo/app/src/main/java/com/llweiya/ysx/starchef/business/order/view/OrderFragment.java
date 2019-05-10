@@ -58,7 +58,8 @@ public class OrderFragment extends Fragment {
 
         orderItemAdapter.setOnItemClickListener(((adapter, view, position) -> {
             OrderItemViewModel viewModel = (OrderItemViewModel)adapter.getData().get(position);
-            if (viewModel.itemStatus.equals(OrderEnum.ORDER_STATUS_WAIT_PAY)) {
+            if (viewModel.itemStatus.equals(OrderEnum.ORDER_STATUS_WAIT_PAY)
+                || viewModel.itemStatus.equals(OrderEnum.ORDER_STATUS_PREPARE)) {
                 HashMap<String, Object> hashMap = new HashMap<>();
                 hashMap.put(RouterConfig.EXTRA_DATA, viewModel);
                 LWRouter.go(getActivity(), RouterConfig.PAYORDER, hashMap);
@@ -79,11 +80,11 @@ public class OrderFragment extends Fragment {
                 viewModel.goodsList = buildFoodItemList(5);
                 viewModel.itemStatus = OrderEnum.ORDER_STATUS_FINISH;
             } else if (i == 7) {
-                viewModel.goodsList = buildFoodItemList(1);
-                viewModel.itemStatus = OrderEnum.ORDER_STATUS_WAIT_COMMENT;
-            } else if (i == 6) {
                 viewModel.goodsList = buildFoodItemList(8);
                 viewModel.itemStatus = OrderEnum.ORDER_STATUS_PREPARE;
+            } else if (i == 6) {
+                viewModel.goodsList = buildFoodItemList(1);
+                viewModel.itemStatus = OrderEnum.ORDER_STATUS_WAIT_COMMENT;
             } else {
                 viewModel.itemStatus = OrderEnum.ORDER_STATUS_WAIT_PAY;
                 viewModel.goodsList = buildFoodItemList(2);

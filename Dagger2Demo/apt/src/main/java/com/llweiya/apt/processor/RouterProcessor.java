@@ -165,14 +165,14 @@ public class RouterProcessor implements IProcessor {
                     .addParameter(ClassName.get("android.content", "Context"), "context")
                     .addParameter(String.class, "name")
                     .addParameter(HashMap.class, "extra")
-                    .addCode("go(context, name,extra,null);\n").build());
+                    .addCode("go(context, name, extra, null);\n").build());
 
             tb.addMethod(MethodSpec.methodBuilder("go")
                     .addJavadoc("@此方法由apt自动生成")
                     .addModifiers(PUBLIC, STATIC)
                     .addParameter(ClassName.get("android.content", "Context"), "context")
                     .addParameter(String.class, "name")
-                    .addCode("go(context, name,null,null);\n").build());
+                    .addCode("go(context, name, null, null);\n").build());
 
             JavaFile javaFile = JavaFile.builder(Utils.PackageName, tb.build()).build();// 生成源代码
             javaFile.writeTo(mAbstractProcessor.mFiler);// 在 app module/build/generated/source/apt 生成一份源代码

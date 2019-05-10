@@ -9,123 +9,177 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/white"
+        android:fitsSystemWindows="true"
         tools:context="com.llweiya.ysx.starchef.business.order.view.PayOrderActivity">
 
-        <android.support.v7.widget.CardView
+        <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            llweiya:contentPaddingTop="20dp"
-            llweiya:contentPaddingBottom="20dp"
-            llweiya:cardElevation="5dp"
-            llweiya:cardCornerRadius="10dp"
-            llweiya:cardBackgroundColor="@color/white"
-            llweiya:cardPreventCornerOverlap="false">
+            android:layout_height="match_parent"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:paddingBottom="100dp"
                 android:orientation="vertical">
 
-                <LinearLayout
+                <android.support.v7.widget.CardView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    llweiya:contentPaddingTop="20dp"
+                    llweiya:contentPaddingBottom="20dp"
+                    llweiya:cardElevation="5dp"
+                    llweiya:cardCornerRadius="10dp"
+                    llweiya:cardBackgroundColor="@color/white"
+                    llweiya:cardPreventCornerOverlap="false">
 
-                    <de.hdodenhof.circleimageview.CircleImageView
-                        android:id="@+id/image_shop_icon"
-                        android:layout_width="36dp"
-                        android:layout_height="36dp"
-                        android:layout_marginLeft="20dp"
-                        android:src="@drawable/ic_avatar_normal"/>
-
-                    <TextView
-                        android:id="@+id/txt_shop_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginRight="20dp"
-                        android:text="Rina1号牛排"
-                        android:textSize="18sp"
-                        android:textColor="@color/llweiya_text_color_black"
-                        android:textStyle="bold"
-                        android:gravity="center_vertical"
-                        android:maxLines="1"
-                        android:ellipsize="end"/>
-
-                </LinearLayout>
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:background="@color/llweiya_divider"/>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:paddingTop="20dp"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp">
-
-                    <TextView
-                        android:id="@+id/txt_total_price"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="￥888.00"
-                        android:textSize="22sp"
-                        android:textColor="@color/llweiya_text_color_black"
-                        android:textStyle="bold"
-                        android:gravity="end"/>
-                    
-                    <RelativeLayout
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="20dp"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <de.hdodenhof.circleimageview.CircleImageView
+                                android:id="@+id/image_shop_icon"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginLeft="20dp"
+                                android:src="@drawable/ic_avatar_normal"/>
+
+                            <TextView
+                                android:id="@+id/txt_shop_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="20dp"
+                                android:text="Rina1号牛排"
+                                android:textSize="18sp"
+                                android:textColor="@color/llweiya_text_color_black"
+                                android:textStyle="bold"
+                                android:gravity="center_vertical"
+                                android:maxLines="1"
+                                android:ellipsize="end"/>
+
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@color/llweiya_divider"/>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recycler_view_items"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:paddingTop="20dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp">
+
+                            <TextView
+                                android:id="@+id/txt_total_price"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="￥888.00"
+                                android:textSize="22sp"
+                                android:textColor="@color/llweiya_text_color_black"
+                                android:textStyle="bold"
+                                android:gravity="end"/>
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="20dp"
+                                android:layout_marginTop="8dp">
+
+                                <TextView
+                                    android:id="@+id/txt_delivery"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_alignParentRight="true"
+                                    android:text="配送费: ￥10.00"
+                                    android:textSize="13sp"
+                                    android:textColor="@color/llweiya_text_color_black"
+                                    android:gravity="bottom"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginRight="10dp"
+                                    android:text="(由距离自动计算)"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/llweiya_text_color_gray"
+                                    android:layout_toLeftOf="@id/txt_delivery"
+                                    android:gravity="bottom"/>
+
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="120dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="20dp"
+                    llweiya:cardElevation="5dp"
+                    llweiya:cardCornerRadius="10dp"
+                    llweiya:cardBackgroundColor="@color/white"
+                    llweiya:cardPreventCornerOverlap="false">
+
+                    <com.rengwuxian.materialedittext.MaterialEditText
+                        android:id="@+id/edt_remark"
                         android:layout_width="match_parent"
-                        android:layout_height="20dp"
-                        android:layout_marginTop="8dp">
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginTop="10dp"
+                        android:hint="添加备注(50字以内)："
+                        llweiya:met_underlineColor="@color/llweiya_divider"
+                        android:textSize="14sp"
+                        android:textColor="@color/llweiya_text_color_black" />
 
-                        <TextView
-                            android:id="@+id/txt_delivery"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_alignParentRight="true"
-                            android:text="配送费: ￥10.00"
-                            android:textSize="13sp"
-                            android:textColor="@color/llweiya_text_color_black"
-                            android:gravity="bottom"/>
+                </android.support.v7.widget.CardView>
 
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_marginRight="10dp"
-                            android:text="(由距离自动计算)"
-                            android:textSize="12sp"
-                            android:textColor="@color/llweiya_text_color_gray"
-                            android:layout_toLeftOf="@id/txt_delivery"
-                            android:gravity="bottom"/>
-
-                    </RelativeLayout>
-
-                </LinearLayout>
+                <Button
+                    android:id="@+id/btn_confirm_order"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="50dp"
+                    android:text="@string/text_confirm_order"
+                    style="@style/LlweiyaButtonStyle"/>
 
             </LinearLayout>
 
-        </android.support.v7.widget.CardView>
+        </android.support.v4.widget.NestedScrollView>
 
-        <Button
+        <com.llweiya.ysx.starchef.business.order.view.PayOrderConfirmView
+            android:id="@+id/confirm_view"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="100dp"
-            android:layout_alignParentBottom="true"
-            android:text="@string/text_confirm_order"
-            style="@style/LlweiyaButtonStyle"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"/>
 
     </RelativeLayout>
 
