@@ -37,6 +37,7 @@ public class PayOrderConfirmView extends LinearLayout {
         llayoutRoot = findViewById(R.id.llayout_root);
         llayoutMain = findViewById(R.id.llayout_main);
         viewCover = findViewById(R.id.view_cover);
+        viewCover.setAlpha(0.3f);
 
         initListener();
     }

@@ -14,7 +14,6 @@
         android:layout_weight="1"
         android:background="@color/llweiya_text_color_placeholder"
         android:visibility="gone"
-        android:alpha="60"
         android:clickable="true"/>
 
     <LinearLayout
