@@ -10,4 +10,5 @@ public class OrderItemViewModel {
     public String itemStatus = "";
     public String totalPrice = "";
     public List<FoodItemModel> goodsList = new ArrayList<>();
+    public List<String> imageList = new ArrayList<>();
 }

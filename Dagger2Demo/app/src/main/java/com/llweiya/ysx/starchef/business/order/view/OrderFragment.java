@@ -28,6 +28,17 @@ public class OrderFragment extends Fragment {
     private OrderItemAdapter orderItemAdapter;
 
     private List<OrderItemViewModel> orderList;
+    String[] images = {
+            "http://test-img001.lpfile.com/private/18930318/20190527190500560kwms4.jpg",
+            "http://test-img001.lpfile.com/private/18930318/20190527190501789uug7q.jpg",
+            "http://test-img001.lpfile.com/private/18930318/20190527190502476q3qaz.jpg",
+            "http://test-img001.lpfile.com/private/18930318/20190527190503069jaddn.jpg",
+            "http://test-img001.lpfile.com/private/18930318/20190527190504149a1mgz.jpg",
+            "http://test-img001.lpfile.com/private/18930318/20190527190504822fkzah.png",
+            "http://test-img001.lpfile.com/private/18930318/20190527190505343i039v.jpg",
+            "http://test-img001.lpfile.com/private/18930318/201905271905056834fzzr.jpg",
+            "http://test-img001.lpfile.com/private/18930318/20190527190506179tvmi0.jpg"
+    };
 
     public OrderFragment() {
 
@@ -78,15 +89,19 @@ public class OrderFragment extends Fragment {
             viewModel.totalPrice = "￥100.00";
             if (i == 2 || i == 5) {
                 viewModel.goodsList = buildFoodItemList(5);
+                viewModel.imageList = buildImageList(3);
                 viewModel.itemStatus = OrderEnum.ORDER_STATUS_FINISH;
             } else if (i == 7) {
                 viewModel.goodsList = buildFoodItemList(8);
+                viewModel.imageList = buildImageList(4);
                 viewModel.itemStatus = OrderEnum.ORDER_STATUS_PREPARE;
             } else if (i == 6) {
                 viewModel.goodsList = buildFoodItemList(1);
+                viewModel.imageList = buildImageList(9);
                 viewModel.itemStatus = OrderEnum.ORDER_STATUS_WAIT_COMMENT;
             } else {
                 viewModel.itemStatus = OrderEnum.ORDER_STATUS_WAIT_PAY;
+                viewModel.imageList = buildImageList(1);
                 viewModel.goodsList = buildFoodItemList(2);
             }
             orderList.add(viewModel);
@@ -104,6 +119,14 @@ public class OrderFragment extends Fragment {
             list.add(itemModel);
         }
         return list;
+    }
+
+    private List<String> buildImageList(int size) {
+        List<String> imageList = new ArrayList<>();
+        for (int i = 0 ; i < size ; i++) {
+            imageList.add(images[i]);
+        }
+        return imageList;
     }
 
 }

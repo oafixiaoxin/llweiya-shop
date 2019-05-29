@@ -138,6 +138,11 @@ dependencies {
     api 'com.github.hackware1993:MagicIndicator:1.6.0'
 
     api 'com.meituan.android.walle:library:1.1.6'
+
+    api 'com.lzy.widget:ninegridview:0.2.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
 }
 
 walle {

@@ -9,6 +9,8 @@ import com.llweiya.ysx.starchef.business.user.model.UserInfoModel;
 import com.llweiya.ysx.starchef.common.injection.AppComponent;
 import com.llweiya.ysx.starchef.common.injection.AppModule;
 import com.llweiya.ysx.starchef.common.injection.DaggerAppComponent;
+import com.llweiya.ysx.starchef.common.view.NineGridViewImageLoader;
+import com.lzy.ninegrid.NineGridView;
 
 import java.util.Stack;
 
@@ -31,6 +33,9 @@ public class LlweiyaApp {
 
         activityStack = new Stack<>();
         registerActivityLifecycle(application);
+
+        //九宫格图片显示
+        NineGridView.setImageLoader(new NineGridViewImageLoader());
 
     }
 

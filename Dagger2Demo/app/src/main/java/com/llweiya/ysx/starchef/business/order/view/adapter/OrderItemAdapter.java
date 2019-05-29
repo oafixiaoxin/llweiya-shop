@@ -10,6 +10,9 @@ import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.business.order.model.FoodItemModel;
 import com.llweiya.ysx.starchef.business.order.model.OrderEnum;
 import com.llweiya.ysx.starchef.business.order.model.OrderItemViewModel;
+import com.lzy.ninegrid.ImageInfo;
+import com.lzy.ninegrid.NineGridView;
+import com.lzy.ninegrid.preview.NineGridViewClickAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -60,6 +63,22 @@ public class OrderItemAdapter extends BaseQuickAdapter<OrderItemViewModel, BaseV
             initGoodsItemAdapter(helper, tmpList);
         } else {
             helper.setGone(R.id.recycler_view, false);
+        }
+
+        if (item.imageList.size() > 0) {
+            List<ImageInfo> imageInfo = new ArrayList<>();
+            for (String imageUrl : item.imageList) {
+                ImageInfo info = new ImageInfo();
+                info.setThumbnailUrl(imageUrl);
+                info.setBigImageUrl(imageUrl);
+                imageInfo.add(info);
+            }
+            NineGridView nineGridView = helper.getView(R.id.nine_grid_view);
+            nineGridView.setAdapter(new NineGridViewClickAdapter(mContext, imageInfo));
+
+            helper.setGone(R.id.nine_grid_view, true);
+        } else {
+            helper.setGone(R.id.nine_grid_view, false);
         }
     }
 
