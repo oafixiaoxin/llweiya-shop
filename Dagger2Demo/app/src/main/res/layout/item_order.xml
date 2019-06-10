@@ -125,19 +125,19 @@
 
             </LinearLayout>
 
-            <com.lzy.ninegrid.NineGridView
-                android:id="@+id/nine_grid_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="12dp"
-                android:layout_marginRight="12dp"
-                android:layout_marginBottom="12dp"
-                llweiya:ngv_maxSize="9"
-                llweiya:ngv_gridSpacing="6dp"
-                llweiya:ngv_singleImageSize="113dp"
-                llweiya:ngv_singleImageRatio="1"
-                llweiya:ngv_mode="grid"/>
+            <!--<com.lzy.ninegrid.NineGridView-->
+                <!--android:id="@+id/nine_grid_view"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_marginTop="20dp"-->
+                <!--android:layout_marginLeft="12dp"-->
+                <!--android:layout_marginRight="12dp"-->
+                <!--android:layout_marginBottom="12dp"-->
+                <!--llweiya:ngv_maxSize="9"-->
+                <!--llweiya:ngv_gridSpacing="6dp"-->
+                <!--llweiya:ngv_singleImageSize="113dp"-->
+                <!--llweiya:ngv_singleImageRatio="1"-->
+                <!--llweiya:ngv_mode="grid"/>-->
 
         </LinearLayout>
 

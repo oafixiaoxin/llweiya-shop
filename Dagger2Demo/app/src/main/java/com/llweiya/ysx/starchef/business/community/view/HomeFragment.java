@@ -1,25 +1,40 @@
 package com.llweiya.ysx.starchef.business.community.view;
 
+import android.content.Context;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
 import com.llweiya.ysx.starchef.R;
+import com.llweiya.ysx.starchef.common.utils.ImageUtil;
+import com.llweiya.ysx.starchef.common.utils.UIUtil;
 import com.llweiya.ysx.starchef.databinding.FragmentHomeBinding;
+import com.zhouwei.mzbanner.holder.MZHolderCreator;
+import com.zhouwei.mzbanner.holder.MZViewHolder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding homeBinding;
+    private Toolbar toolbar;
 
     public HomeFragment() {
         // Required empty public constructor
     }
 
-    public static HomeFragment newInstance() {
-        return new HomeFragment();
+    public static HomeFragment newInstance(Toolbar toolbar) {
+        HomeFragment homeFragment = new HomeFragment();
+        homeFragment.toolbar = toolbar;
+        return homeFragment;
     }
 
     @Override
@@ -29,7 +44,72 @@ public class HomeFragment extends Fragment {
 
         homeBinding = DataBindingUtil.bind(view);
 
+        initToolBar();
+        initBannerView();
+
         return view;
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        homeBinding.banner.pause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        homeBinding.banner.start();
+    }
+
+    private void initToolBar() {
+        toolbar.removeAllViews();
+        ((AppCompatActivity)getActivity()).setSupportActionBar(toolbar);
+        View view = LayoutInflater.from(getActivity()).inflate(R.layout.llweiya_home_search_bar, null);
+
+        ActionBar.LayoutParams searchBarLayoutParams = new ActionBar.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        searchBarLayoutParams.rightMargin = UIUtil.dip2pixel(getActivity(), 16);
+
+        ActionBar actionBar = ((AppCompatActivity)getActivity()).getSupportActionBar();
+        actionBar.setCustomView(view, searchBarLayoutParams);
+        actionBar.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+        actionBar.setDisplayShowTitleEnabled(false);
+    }
+
+    private void initBannerView() {
+        // 设置数据
+        String[] images = {"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560171159736&di=1ec49888dd49a363c4cee8637092d2af&imgtype=0&src=http%3A%2F%2Fpics.ettoday.net%2Fimages%2F1523%2Fd1523633.jpg"
+                            , "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3796177013,1776574858&fm=26&gp=0.jpg"
+                            , "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560171257772&di=281735c5f44a3e7818028f94f13b0004&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201203%2F11%2F20120311103320_ekXTi.thumb.700_0.jpeg"};
+        List<String> list = new ArrayList<>();
+        for (int i = 0 ; i < 3 ; i++) {
+            list.add(images[i]);
+        }
+        homeBinding.banner.setPages(list, new MZHolderCreator<BannerViewHolder>() {
+            @Override
+            public BannerViewHolder createViewHolder() {
+                return new BannerViewHolder();
+            }
+        });
+
+//        homeBinding.banner.setIndicatorPadding(0, 0, 0, -20);
+    }
+
+    private class BannerViewHolder implements MZViewHolder<String> {
+        private ImageView mImageView;
+        @Override
+        public View createView(Context context) {
+            // 返回页面布局
+            View view = LayoutInflater.from(context).inflate(R.layout.item_home_banner,null);
+            mImageView = (ImageView) view.findViewById(R.id.image);
+            return view;
+        }
+
+        @Override
+        public void onBind(Context context, int position, String data) {
+            // 数据绑定
+            ImageUtil.showImage(getActivity(), mImageView, data);
+        }
     }
 
 }

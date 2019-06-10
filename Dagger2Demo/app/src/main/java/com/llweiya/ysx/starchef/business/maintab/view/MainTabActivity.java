@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
+import android.view.View;
 
 import com.example.annotation.aspect.CheckLogin;
 import com.llweiya.ysx.starchef.R;
@@ -47,7 +49,7 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
 
     private void initTabItems() {
         List<Fragment> items = new ArrayList<>();
-        items.add(HomeFragment.newInstance());
+        items.add(HomeFragment.newInstance(viewBinding.toolbar));
         items.add(FavoriteFragment.newInstance());
         items.add(CommunityMainFragment.newInstance());
         items.add(OrderMainFragment.newInstance());
@@ -75,21 +77,25 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
 
     private void addListener() {
         viewBinding.bottomBar.setOnTabSelectListener(tabId -> {
-            Timber.e("select >>> " + tabId);
             switch (tabId) {
                 case R.id.tab_home:
+                    viewBinding.toolbar.setVisibility(View.VISIBLE);
                     changeCurrentTab(0);
                     break;
                 case R.id.tab_favorite:
+                    viewBinding.toolbar.setVisibility(View.GONE);
                     changeCurrentTab(1);
                     break;
                 case R.id.tab_community:
+                    viewBinding.toolbar.setVisibility(View.GONE);
                     changeCurrentTab(2);
                     break;
                 case R.id.tab_order:
+                    viewBinding.toolbar.setVisibility(View.GONE);
                     changeCurrentTab(3);
                     break;
                 case R.id.tab_mine:
+                    viewBinding.toolbar.setVisibility(View.GONE);
                     changeCurrentTab(4);
                     break;
             }
@@ -100,9 +106,14 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
         });
     }
 
+    protected Toolbar getToolbar() {
+        return viewBinding.toolbar;
+    }
+
     private void changeCurrentTab(int index) {
         viewBinding.viewPager.setCurrentItem(index, false);
     }
+
     @CheckLogin
     private void changeCurrentTabNeedLogin(int index) {
         viewBinding.viewPager.setCurrentItem(index, false);

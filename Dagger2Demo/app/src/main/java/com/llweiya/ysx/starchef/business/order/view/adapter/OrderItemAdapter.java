@@ -65,21 +65,21 @@ public class OrderItemAdapter extends BaseQuickAdapter<OrderItemViewModel, BaseV
             helper.setGone(R.id.recycler_view, false);
         }
 
-        if (item.imageList.size() > 0) {
-            List<ImageInfo> imageInfo = new ArrayList<>();
-            for (String imageUrl : item.imageList) {
-                ImageInfo info = new ImageInfo();
-                info.setThumbnailUrl(imageUrl);
-                info.setBigImageUrl(imageUrl);
-                imageInfo.add(info);
-            }
-            NineGridView nineGridView = helper.getView(R.id.nine_grid_view);
-            nineGridView.setAdapter(new NineGridViewClickAdapter(mContext, imageInfo));
-
-            helper.setGone(R.id.nine_grid_view, true);
-        } else {
-            helper.setGone(R.id.nine_grid_view, false);
-        }
+//        if (item.imageList.size() > 0) {
+//            List<ImageInfo> imageInfo = new ArrayList<>();
+//            for (String imageUrl : item.imageList) {
+//                ImageInfo info = new ImageInfo();
+//                info.setThumbnailUrl(imageUrl);
+//                info.setBigImageUrl(imageUrl);
+//                imageInfo.add(info);
+//            }
+//            NineGridView nineGridView = helper.getView(R.id.nine_grid_view);
+//            nineGridView.setAdapter(new NineGridViewClickAdapter(mContext, imageInfo));
+//
+//            helper.setGone(R.id.nine_grid_view, true);
+//        } else {
+//            helper.setGone(R.id.nine_grid_view, false);
+//        }
     }
 
     private void initGoodsItemAdapter(BaseViewHolder helper, List<FoodItemModel> list) {
