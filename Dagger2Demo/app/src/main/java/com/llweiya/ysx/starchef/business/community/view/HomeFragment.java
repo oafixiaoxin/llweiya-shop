@@ -135,9 +135,9 @@ public class HomeFragment extends Fragment implements HomeDataView, SwipeRefresh
     private void initBannerView() {
         // 设置数据
         String[] images = {
-                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560171159736&di=1ec49888dd49a363c4cee8637092d2af&imgtype=0&src=http%3A%2F%2Fpics.ettoday.net%2Fimages%2F1523%2Fd1523633.jpg"
-                , "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3796177013,1776574858&fm=26&gp=0.jpg"
-                , "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560171257772&di=281735c5f44a3e7818028f94f13b0004&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201203%2F11%2F20120311103320_ekXTi.thumb.700_0.jpeg"
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560171159736&di=1ec49888dd49a363c4cee8637092d2af&imgtype=0&src=http%3A%2F%2Fpics.ettoday.net%2Fimages%2F1523%2Fd1523633.jpg",
+                "https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3796177013,1776574858&fm=26&gp=0.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560171257772&di=281735c5f44a3e7818028f94f13b0004&imgtype=0&src=http%3A%2F%2Fimg4.duitang.com%2Fuploads%2Fitem%2F201203%2F11%2F20120311103320_ekXTi.thumb.700_0.jpeg"
         };
         List<String> list = new ArrayList<>();
         for (int i = 0 ; i < 3 ; i++) {

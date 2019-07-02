@@ -3,6 +3,7 @@
     <dimen name="llweiya_margin">16dp</dimen>
 
     <dimen name="llweiya_icon_size_16">16dp</dimen>
+    <dimen name="llweiya_icon_size_12">12dp</dimen>
 
     <dimen name="llweiya_text_size_16">16sp</dimen>
     <dimen name="llweiya_text_size_18">18sp</dimen>

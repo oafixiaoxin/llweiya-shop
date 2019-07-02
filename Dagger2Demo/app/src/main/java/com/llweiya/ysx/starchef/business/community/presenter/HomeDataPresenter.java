@@ -6,7 +6,10 @@ import com.llweiya.ysx.starchef.business.community.model.DiscountAreaModel;
 import com.llweiya.ysx.starchef.business.community.model.HomeAddsAreaViewModel;
 import com.llweiya.ysx.starchef.business.community.model.HomeCategoryAreaViewModel;
 import com.llweiya.ysx.starchef.business.community.model.HomeDiscountAreaViewModel;
+import com.llweiya.ysx.starchef.business.community.model.HomeNearbyShopAreaViewModel;
 import com.llweiya.ysx.starchef.business.community.model.IHomeDataType;
+import com.llweiya.ysx.starchef.business.community.model.IShopType;
+import com.llweiya.ysx.starchef.business.community.model.NearbyShopModel;
 import com.llweiya.ysx.starchef.business.community.view.HomeDataView;
 import com.llweiya.ysx.starchef.common.model.SimpleObjectViewModel;
 import com.llweiya.ysx.starchef.common.presenter.BasePresenter;
@@ -33,6 +36,7 @@ public class HomeDataPresenter extends BasePresenter<CommunityInteractor, HomeDa
             R.drawable.icon_fresh_food,
             R.drawable.icon_more
     };
+    private int[] shopTypes = {0, 2, 3, 1, 5, 4};
 
     public void getHomeData() {
         List<IHomeDataType> retList = new ArrayList<>();
@@ -67,6 +71,50 @@ public class HomeDataPresenter extends BasePresenter<CommunityInteractor, HomeDa
         homeAddsAreaViewModel.addsUrl = "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1560406965202&di=ccd92eeb21943474cae09a92b7d2f298&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2Fd4b999cf78e6e75e358842b2a9de14f069779b8d7f36-URP56P_fw658";
         retList.add(homeAddsAreaViewModel);
 
+        //附近店家
+        HomeNearbyShopAreaViewModel homeNearbyShopAreaViewModel = new HomeNearbyShopAreaViewModel();
+        List<NearbyShopModel> shopList = new ArrayList<>();
+        for (int i = 0 ; i < 6 ; i++) {
+            NearbyShopModel shopModel = new NearbyShopModel();
+            shopModel.shopId = String.valueOf(i);
+            shopModel.shopName = "附近店家" + (i+1);
+            shopModel.shopScroe = 4;
+            shopModel.shopUrl = "";
+            shopModel.location = "天河区";
+            shopModel.shopType = transformShopType(shopTypes[i]);
+            for (int j = 0 ; j < 4 ; j++) {
+                shopModel.shopTags.add("店家标签" + (j+1));
+            }
+            shopList.add(shopModel);
+        }
+        homeNearbyShopAreaViewModel.shopList = shopList;
+        retList.add(homeNearbyShopAreaViewModel);
+
         view.getDataSuccess(retList);
+    }
+
+    private String transformShopType(int shopType) {
+        String st = "";
+        switch (shopType) {
+            case 0 :
+                st = IShopType.SHOP_TYPE_CANTOON;
+                break;
+            case 1 :
+                st = IShopType.SHOP_TYPE_FAST_FOOD;
+                break;
+            case 2 :
+                st = IShopType.SHOP_TYPE_JANPANSE;
+                break;
+            case 3 :
+                st = IShopType.SHOP_TYPE_WESTERN;
+                break;
+            case 4 :
+                st = IShopType.SHOT_TYPE_SICUAN;
+                break;
+            case 5 :
+                st = IShopType.SHOP_TYPE_WESTERN;
+                break;
+        }
+        return st;
     }
 }

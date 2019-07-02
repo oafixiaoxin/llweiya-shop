@@ -1,6 +1,7 @@
 package com.llweiya.ysx.starchef.business.community.view.adapter;
 
 import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -11,6 +12,7 @@ import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.business.community.model.HomeAddsAreaViewModel;
 import com.llweiya.ysx.starchef.business.community.model.HomeCategoryAreaViewModel;
 import com.llweiya.ysx.starchef.business.community.model.HomeDiscountAreaViewModel;
+import com.llweiya.ysx.starchef.business.community.model.HomeNearbyShopAreaViewModel;
 import com.llweiya.ysx.starchef.business.community.model.IHomeDataType;
 import com.llweiya.ysx.starchef.common.utils.ImageUtil;
 import com.llweiya.ysx.starchef.common.utils.Utility;
@@ -89,6 +91,11 @@ public class HomeDataAdapter extends BaseMultiItemQuickAdapter<IHomeDataType, Ba
     }
 
     private void setItemNearbyShop(BaseViewHolder helper, IHomeDataType item) {
-
+        HomeNearbyShopAreaViewModel nearbyShopAreaViewModel = (HomeNearbyShopAreaViewModel)item;
+        RecyclerView recyclerView = (RecyclerView)helper.getView(R.id.recycler_nearby_shop);
+        recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+        HomeNearbyShopAdapter shopAdapter = new HomeNearbyShopAdapter();
+        recyclerView.setAdapter(shopAdapter);
+        shopAdapter.setNewData(nearbyShopAreaViewModel.shopList);
     }
 }

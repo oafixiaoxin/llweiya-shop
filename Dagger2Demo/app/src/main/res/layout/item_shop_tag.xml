@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+    android:layout_marginLeft="4dp"
+    android:orientation="vertical"
+    android:background="@drawable/bg_shop_tag">
+
+    <TextView
+        android:id="@+id/txt_tag_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp"
+        android:text="听说这儿的牛排份量很大"
+        android:textSize="@dimen/llweiya_text_size_12"
+        android:textColor="#ff4060"/>
+
+</LinearLayout>
