@@ -51,4 +51,11 @@
         <!--<item name="android:windowIsTranslucent">true</item>-->
     </style>
 
+
+    <style name="HomeStarViewStyle" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/home_star_view_selector</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">16dp</item>
+    </style>
+
 </resources>

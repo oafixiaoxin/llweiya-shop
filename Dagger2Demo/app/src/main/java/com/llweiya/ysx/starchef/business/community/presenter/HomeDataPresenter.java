@@ -15,6 +15,7 @@ import com.llweiya.ysx.starchef.common.model.SimpleObjectViewModel;
 import com.llweiya.ysx.starchef.common.presenter.BasePresenter;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class HomeDataPresenter extends BasePresenter<CommunityInteractor, HomeDataView> {
@@ -37,6 +38,7 @@ public class HomeDataPresenter extends BasePresenter<CommunityInteractor, HomeDa
             R.drawable.icon_more
     };
     private int[] shopTypes = {0, 2, 3, 1, 5, 4};
+    private String[] shopTags = {"环境很好", "服务态度很不错", "会再来吃", "周边环境很好，氛围很好"};
 
     public void getHomeData() {
         List<IHomeDataType> retList = new ArrayList<>();
@@ -82,9 +84,7 @@ public class HomeDataPresenter extends BasePresenter<CommunityInteractor, HomeDa
             shopModel.shopUrl = "";
             shopModel.location = "天河区";
             shopModel.shopType = transformShopType(shopTypes[i]);
-            for (int j = 0 ; j < 4 ; j++) {
-                shopModel.shopTags.add("店家标签" + (j+1));
-            }
+            shopModel.shopTags.addAll(Arrays.asList(shopTags));
             shopList.add(shopModel);
         }
         homeNearbyShopAreaViewModel.shopList = shopList;

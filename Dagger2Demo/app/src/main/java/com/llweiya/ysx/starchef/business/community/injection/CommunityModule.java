@@ -4,7 +4,9 @@ import android.content.Context;
 
 import com.llweiya.ysx.starchef.business.community.interactor.CommunityInteractor;
 import com.llweiya.ysx.starchef.business.community.interactor.CommunityInteractorImpl;
+import com.llweiya.ysx.starchef.business.community.presenter.FavoritePresenter;
 import com.llweiya.ysx.starchef.business.community.presenter.HomeDataPresenter;
+import com.llweiya.ysx.starchef.business.community.view.FavoriteView;
 import com.llweiya.ysx.starchef.business.community.view.HomeDataView;
 import com.llweiya.ysx.starchef.common.injection.ActivityScope;
 import com.llweiya.ysx.starchef.common.presenter.BasePresenter;
@@ -30,5 +32,14 @@ public class CommunityModule {
                 .setCurrentContext(context)
                 .setInteractor(interactor)
                 .build(HomeDataPresenter.class);
+    }
+
+    @Provides
+    FavoritePresenter provideFavoritePresenter(Context context, BaseView baseView, CommunityInteractor interactor) {
+        return new BasePresenter.Builder<CommunityInteractor, FavoriteView>()
+                .attachView(baseView)
+                .setCurrentContext(context)
+                .setInteractor(interactor)
+                .build(FavoritePresenter.class);
     }
 }

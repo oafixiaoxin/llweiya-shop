@@ -1,4 +1,4 @@
-package com.llweiya.ysx.starchef.business.order.view;
+package com.llweiya.ysx.starchef.business.community.view;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
@@ -10,12 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.llweiya.ysx.starchef.R;
-import com.llweiya.ysx.starchef.business.community.view.CommunityMainFragment;
-import com.llweiya.ysx.starchef.business.community.view.FavoriteMainFragment;
 import com.llweiya.ysx.starchef.business.maintab.view.ScaleTransitionPagerTitleView;
+import com.llweiya.ysx.starchef.business.order.view.OrderFragment;
 import com.llweiya.ysx.starchef.common.ScrollablePagerAdapter;
 import com.llweiya.ysx.starchef.common.utils.UIUtil;
-import com.llweiya.ysx.starchef.databinding.FragmentOrderMainBinding;
+import com.llweiya.ysx.starchef.databinding.FragmentFavoriteMainBinding;
 
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
@@ -28,26 +27,26 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.Simple
 import java.util.ArrayList;
 import java.util.List;
 
-public class OrderMainFragment extends Fragment {
+public class FavoriteMainFragment extends Fragment {
 
-    private FragmentOrderMainBinding orderBinding;
+    private FragmentFavoriteMainBinding favoriteBinding;
 
     private List<String> indicatorTitles;
 
-    public OrderMainFragment() {
+    public FavoriteMainFragment() {
 
     }
 
-    public static OrderMainFragment newInstance() {
-        return new OrderMainFragment();
+    public static FavoriteMainFragment newInstance() {
+        return new FavoriteMainFragment();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_order_main, container, false);
+        View view = inflater.inflate(R.layout.fragment_favorite_main, container, false);
 
-        orderBinding = DataBindingUtil.bind(view);
+        favoriteBinding = DataBindingUtil.bind(view);
 
         buildIndicatorTitles();
         initScrollViewPager();
@@ -57,26 +56,28 @@ public class OrderMainFragment extends Fragment {
 
     private void buildIndicatorTitles () {
         indicatorTitles = new ArrayList<>();
-        indicatorTitles.add("订单");
-        indicatorTitles.add("购物车");
-        indicatorTitles.add("收藏");
+        indicatorTitles.add("关注");
+        indicatorTitles.add("推荐");
+        indicatorTitles.add("附近");
+        indicatorTitles.add("榜单");
     }
 
     private void initScrollViewPager() {
         List<ScrollablePagerAdapter.Item> items = items();
-        orderBinding.viewPager.setOffscreenPageLimit(items.size());
+        favoriteBinding.viewPager.setOffscreenPageLimit(items.size());
         final ScrollablePagerAdapter adapter = new ScrollablePagerAdapter(getChildFragmentManager(), items);
-        orderBinding.viewPager.setAdapter(adapter);
+        favoriteBinding.viewPager.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
         initIndicator();
     }
 
     private List<ScrollablePagerAdapter.Item> items() {
-        List<ScrollablePagerAdapter.Item> list = new ArrayList<>(3);
-        list.add(new ScrollablePagerAdapter.Item(indicatorTitles.get(0), OrderFragment::newInstance));
-        list.add(new ScrollablePagerAdapter.Item(indicatorTitles.get(1), FavoriteMainFragment::newInstance));
+        List<ScrollablePagerAdapter.Item> list = new ArrayList<>(indicatorTitles.size());
+        list.add(new ScrollablePagerAdapter.Item(indicatorTitles.get(0), FavoriteFragment::newInstance));
+        list.add(new ScrollablePagerAdapter.Item(indicatorTitles.get(1), CommunityMainFragment::newInstance));
         list.add(new ScrollablePagerAdapter.Item(indicatorTitles.get(2), CommunityMainFragment::newInstance));
+        list.add(new ScrollablePagerAdapter.Item(indicatorTitles.get(3), OrderFragment::newInstance));
         return list;
     }
 
@@ -102,7 +103,7 @@ public class OrderMainFragment extends Fragment {
                 simplePagerTitleView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        orderBinding.viewPager.setCurrentItem(index);
+                        favoriteBinding.viewPager.setCurrentItem(index);
                     }
                 });
                 return simplePagerTitleView;
@@ -117,8 +118,8 @@ public class OrderMainFragment extends Fragment {
                 return indicator;
             }
         });
-        orderBinding.indicator.setNavigator(commonNavigator);
-        ViewPagerHelper.bind(orderBinding.indicator, orderBinding.viewPager);
+        favoriteBinding.indicator.setNavigator(commonNavigator);
+        ViewPagerHelper.bind(favoriteBinding.indicator, favoriteBinding.viewPager);
     }
 
 }

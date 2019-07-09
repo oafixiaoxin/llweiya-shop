@@ -11,7 +11,7 @@ import android.view.View;
 import com.example.annotation.aspect.CheckLogin;
 import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.business.community.view.CommunityMainFragment;
-import com.llweiya.ysx.starchef.business.community.view.FavoriteFragment;
+import com.llweiya.ysx.starchef.business.community.view.FavoriteMainFragment;
 import com.llweiya.ysx.starchef.business.community.view.HomeFragment;
 import com.llweiya.ysx.starchef.business.order.view.OrderMainFragment;
 import com.llweiya.ysx.starchef.business.user.model.UserInfoManager;
@@ -22,8 +22,6 @@ import com.llweiya.ysx.starchef.databinding.ActivityMainTabBinding;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import timber.log.Timber;
 
 public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
     private double exitTime = 0;
@@ -50,7 +48,7 @@ public class MainTabActivity extends BaseActivity<ActivityMainTabBinding> {
     private void initTabItems() {
         List<Fragment> items = new ArrayList<>();
         items.add(HomeFragment.newInstance(viewBinding.toolbar));
-        items.add(FavoriteFragment.newInstance());
+        items.add(FavoriteMainFragment.newInstance());
         items.add(CommunityMainFragment.newInstance());
         items.add(OrderMainFragment.newInstance());
         items.add(UserInfoFragment.newInstance());

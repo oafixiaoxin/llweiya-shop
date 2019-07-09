@@ -44,11 +44,13 @@
                     android:textSize="@dimen/llweiya_text_size_14"
                     android:textColor="@color/llweiya_text_color_black"/>
 
-                <View
-                    android:layout_width="100dp"
-                    android:layout_height="20dp"
+                <android.support.v7.widget.AppCompatRatingBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:background="@color/llweiya_main_color"/>
+                    android:rating="5"
+                    android:stepSize="1"
+                    style="@style/HomeStarViewStyle"/>
                 
                 <LinearLayout
                     android:layout_width="match_parent"
