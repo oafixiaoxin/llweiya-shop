@@ -1,24 +1,17 @@
 package com.llweiya.ysx.starchef.common.application;
 
-import android.app.AppOpsManager;
 import android.app.Application;
 import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.support.multidex.MultiDex;
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v7.app.AppCompatDelegate;
+import android.os.Build;
 import android.util.Log;
-import android.widget.Toast;
+
+import androidx.multidex.MultiDex;
 
 import com.baidu.android.pushservice.PushConstants;
 import com.baidu.android.pushservice.PushManager;
 import com.baidu.android.pushservice.PushSettings;
-import com.llweiya.ysx.starchef.common.application.ApplicationContract;
-import com.llweiya.ysx.starchef.common.application.LlweiyaBiz;
-
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import com.llweiya.ysx.starchef.common.utils.LanguageUtil;
+import com.llweiya.ysx.starchef.common.utils.SpUtil;
 
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
 
@@ -61,6 +54,11 @@ public class LlweiyaApplication extends Application implements ApplicationContra
 //        RxTool.init(this);
 
         Log.e(TAG, getPackageName());
+
+        String language = SpUtil.getInstance(this).getString(SpUtil.LANGUAGE);
+        if (Build.VERSION.SDK_INT <= Build.VERSION_CODES.N) {
+            LanguageUtil.changeAppLanguage(this, language);
+        }
 
     }
 

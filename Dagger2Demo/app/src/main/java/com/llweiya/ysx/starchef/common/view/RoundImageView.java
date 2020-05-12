@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.common.utils.UIUtil;
 
-public class RoundImageView extends ImageView {
+public class RoundImageView extends androidx.appcompat.widget.AppCompatImageView {
     float width, height;
 
     public RoundImageView(Context context) {

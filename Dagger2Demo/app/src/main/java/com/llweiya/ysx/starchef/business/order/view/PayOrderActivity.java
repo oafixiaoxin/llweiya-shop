@@ -1,7 +1,8 @@
 package com.llweiya.ysx.starchef.business.order.view;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.annotation.apt.Extra;
 import com.example.annotation.apt.LlweiyaRouter;

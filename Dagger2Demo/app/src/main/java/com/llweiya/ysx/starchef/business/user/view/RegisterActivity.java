@@ -1,8 +1,7 @@
 package com.llweiya.ysx.starchef.business.user.view;
 
 import android.content.Intent;
-import android.support.v4.app.NotificationManagerCompat;
-import android.support.v7.app.AppCompatActivity;
+import androidx.core.app.NotificationManagerCompat;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -10,7 +9,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.androidadvance.topsnackbar.TSnackbar;
 import com.google.android.flexbox.FlexDirection;

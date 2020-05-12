@@ -1,7 +1,6 @@
 package com.llweiya.ysx.starchef.business.user.view;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 
 import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.business.user.injection.DaggerUserComponent;

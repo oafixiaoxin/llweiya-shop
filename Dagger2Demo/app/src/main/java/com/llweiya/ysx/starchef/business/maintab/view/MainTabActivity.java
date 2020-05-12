@@ -1,12 +1,13 @@
 package com.llweiya.ysx.starchef.business.maintab.view;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentStatePagerAdapter;
 
 import com.example.annotation.aspect.CheckLogin;
 import com.llweiya.ysx.starchef.R;

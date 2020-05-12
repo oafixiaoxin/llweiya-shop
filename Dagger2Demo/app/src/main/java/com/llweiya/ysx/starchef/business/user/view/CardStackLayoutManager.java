@@ -1,10 +1,11 @@
 package com.llweiya.ysx.starchef.business.user.view;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.llweiya.ysx.starchef.business.user.tools.CardConfig;
 

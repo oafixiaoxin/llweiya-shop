@@ -2,7 +2,7 @@ package com.llweiya.ysx.starchef.common.injection;
 
 import android.app.Application;
 import android.content.Context;
-import android.databinding.ViewDataBinding;
+import androidx.databinding.ViewDataBinding;
 
 import com.llweiya.ysx.starchef.common.view.BaseActivity;
 import com.llweiya.ysx.starchef.common.view.BaseView;

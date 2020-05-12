@@ -1,6 +1,7 @@
 package com.llweiya.ysx.starchef.business.user.injection;
 
 import com.llweiya.ysx.starchef.business.user.view.CardStackActivity;
+import com.llweiya.ysx.starchef.business.user.view.ChangeLanguageActivity;
 import com.llweiya.ysx.starchef.business.user.view.LoginActivity;
 import com.llweiya.ysx.starchef.business.user.view.NewLoginActivity;
 import com.llweiya.ysx.starchef.business.user.view.NewRegisterActivity;
@@ -31,4 +32,5 @@ public interface UserComponent {
     void inject(CardStackActivity activity);
     void inject(NewLoginActivity activity);
     void inject(NewRegisterActivity activity);
+    void inject(ChangeLanguageActivity activity);
 }

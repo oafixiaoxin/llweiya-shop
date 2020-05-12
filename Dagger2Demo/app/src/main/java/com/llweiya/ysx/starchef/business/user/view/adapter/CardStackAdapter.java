@@ -1,6 +1,6 @@
 package com.llweiya.ysx.starchef.business.user.view.adapter;
 
-import android.support.v7.widget.CardView;
+import androidx.cardview.widget.CardView;
 
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;

@@ -2,10 +2,11 @@ package com.llweiya.ysx.starchef.common.view;
 
 import android.content.Context;
 import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.TypedValue;
 import android.view.View;
+
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 public class StaggeredItemDecoration extends RecyclerView.ItemDecoration {
 

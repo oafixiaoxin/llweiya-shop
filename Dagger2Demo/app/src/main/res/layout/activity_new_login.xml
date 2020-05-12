@@ -11,7 +11,7 @@
         android:orientation="vertical"
         tools:context="com.llweiya.ysx.starchef.business.user.view.NewLoginActivity">
 
-        <android.support.v7.widget.Toolbar
+        <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize">
@@ -33,7 +33,7 @@
 
             </RelativeLayout>
 
-        </android.support.v7.widget.Toolbar>
+        </androidx.appcompat.widget.Toolbar>
 
         <TextView
             android:id="@+id/txt_say_hello"

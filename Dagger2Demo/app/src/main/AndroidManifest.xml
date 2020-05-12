@@ -132,9 +132,13 @@
         <activity
             android:name=".business.order.view.OrderDetailActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".business.order.view.PayOrderActivity"
+        <activity
+            android:name=".business.order.view.PayOrderActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/LlweiyaMainTheme"/>
+            android:theme="@style/LlweiyaMainTheme" />
+        <activity android:name=".business.user.view.ChangeLanguageActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/LlweiyaMainTheme" />
     </application>
 
 </manifest>

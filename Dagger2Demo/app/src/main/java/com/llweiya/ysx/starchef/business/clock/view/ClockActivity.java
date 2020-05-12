@@ -2,7 +2,6 @@ package com.llweiya.ysx.starchef.business.clock.view;
 
 import android.os.Handler;
 import android.os.Message;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.llweiya.ysx.starchef.R;

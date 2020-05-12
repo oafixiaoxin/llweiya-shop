@@ -1,14 +1,16 @@
 package com.llweiya.ysx.starchef.business.community.view;
 
 import android.content.Context;
-import android.databinding.DataBindingUtil;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,10 +22,8 @@ import com.llweiya.ysx.starchef.business.community.injection.DaggerCommunityComp
 import com.llweiya.ysx.starchef.business.community.model.IHomeDataType;
 import com.llweiya.ysx.starchef.business.community.presenter.HomeDataPresenter;
 import com.llweiya.ysx.starchef.business.community.view.adapter.HomeDataAdapter;
-import com.llweiya.ysx.starchef.common.ComponentReflectionInjector;
 import com.llweiya.ysx.starchef.common.application.LlweiyaApp;
 import com.llweiya.ysx.starchef.common.injection.AppComponent;
-import com.llweiya.ysx.starchef.common.injection.BaseComponent;
 import com.llweiya.ysx.starchef.common.injection.BaseModule;
 import com.llweiya.ysx.starchef.common.injection.DaggerBaseComponent;
 import com.llweiya.ysx.starchef.common.utils.ImageUtil;

@@ -3,12 +3,13 @@ package com.llweiya.ysx.starchef.common.view;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
-import android.databinding.DataBindingUtil;
-import android.databinding.ViewDataBinding;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.databinding.ViewDataBinding;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,10 +23,13 @@ import com.llweiya.ysx.starchef.common.injection.AppComponent;
 import com.llweiya.ysx.starchef.common.injection.BaseComponent;
 import com.llweiya.ysx.starchef.common.injection.BaseModule;
 import com.llweiya.ysx.starchef.common.injection.DaggerBaseComponent;
+import com.llweiya.ysx.starchef.common.utils.LanguageUtil;
+import com.llweiya.ysx.starchef.common.utils.SpUtil;
 import com.llweiya.ysx.starchef.common.utils.UIUtil;
 
+import java.util.Locale;
+
 import cn.bingoogolapple.swipebacklayout.BGASwipeBackHelper;
-import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 /**
  * Created by ysx on 2018/1/15.
@@ -221,9 +225,16 @@ public abstract class BaseActivity<B extends ViewDataBinding> extends AppCompatA
         return baseModule;
     }
 
+    /**
+     * 此方法先于 onCreate()方法执行
+     * @param baseContext
+     */
     @Override
     protected void attachBaseContext(Context baseContext) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(baseContext));
+        //获取我们存储的语言环境 比如 "en","zh",等等
+        String locale = Locale.getDefault().getLanguage();
+        String language = SpUtil.getInstance(LlweiyaApp.getCurrentActivity()).getString(SpUtil.LANGUAGE);
+        super.attachBaseContext(LanguageUtil.attachBaseContext(baseContext, locale));
     }
 
     /**

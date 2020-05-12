@@ -5,10 +5,10 @@ import android.media.AudioFormat;
 import android.media.MediaRecorder;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
 
 import com.llweiya.ysx.starchef.R;
 import com.llweiya.ysx.starchef.business.dependency.injection.DaggerDependencyComponent;

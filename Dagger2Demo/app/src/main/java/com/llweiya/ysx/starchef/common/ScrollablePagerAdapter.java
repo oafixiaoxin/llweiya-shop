@@ -1,11 +1,12 @@
 package com.llweiya.ysx.starchef.common;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentPagerAdapter;
 
 import java.util.List;
 
-public class ScrollablePagerAdapter extends android.support.v4.app.FragmentPagerAdapter {
+public class ScrollablePagerAdapter extends FragmentPagerAdapter {
     public interface Provider {
         Fragment provide();
     }

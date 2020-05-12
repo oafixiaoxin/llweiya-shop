@@ -94,9 +94,9 @@ public class RouterProcessor implements IProcessor {
                 mRouterActivityModel.setNeedBind(isNeedBind);
                 mRouterActivityModels.add(mRouterActivityModel);
             }
-            ClassName mActivityCompatName = ClassName.get("android.support.v4.app", "ActivityCompat");
+            ClassName mActivityCompatName = ClassName.get("androidx.core.app", "ActivityCompat");
             ClassName mIntentClassName = ClassName.get("android.content", "Intent");
-            ClassName mActivityOptionsCompatName = ClassName.get("android.support.v4.app", "ActivityOptionsCompat");
+            ClassName mActivityOptionsCompatName = ClassName.get("androidx.core.app", "ActivityOptionsCompat");
             for (RouterActivityModel item : mRouterActivityModels) {
                 blockBuilderGo.add("case $S: \n", item.getActionName());//1
                 if (item.isNeedBind())
@@ -133,7 +133,7 @@ public class RouterProcessor implements IProcessor {
                                     "(($T)mContext)." +//3
                                     "$L, " +//4
                                     "$S);\n",//5
-                            ClassName.get("android.support.v4.view", "ViewCompat"),//2
+                            ClassName.get("androidx.core.view", "ViewCompat"),//2
                             item.getElement(),//3
                             item.getSceneTransitionElement(),//4
                             item.getSceneTransitionElementName());//5

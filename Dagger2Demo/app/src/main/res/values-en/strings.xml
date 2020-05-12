@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">llweiya</string>
+    <string name="test_string">yanshuxin</string>
+    <string name="bottom_bar_home">home</string>
+    <string name="bottom_bar_favorite">follow</string>
+    <string name="bottom_bar_community">community</string>
+    <string name="bottom_bar_order">order</string>
+    <string name="bottom_bar_mine">me</string>
+
+    <string name="text_register">logon</string>
+    <string name="text_login">login</string>
+    <string name="text_say_hello">Welcome Llweiya-Food</string>
+    <string name="text_forget_password">forgot password</string>
+    <string name="text_remember_password">remenber</string>
+    <string name="text_other_login_way">other_login_way</string>
+    <string name="text_get_verify_code">code</string>
+    <string name="text_confirm_order">confirm</string>
+    <string name="text_pay_order">pay</string>
+
+    <string name="hint_login_phone">Input phone number</string>
+    <string name="hint_login_password">password length limited in 10~20</string>
+    <string name="hint_verify_code">verify code</string>
+    <string name="hint_search_key_word">key word search</string>
+
+    <string name="toast_exit_app">Press again to exit the app.</string>
+
+    <string name="text_language">Language</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>
