@@ -51,11 +51,23 @@
         <!--<item name="android:windowIsTranslucent">true</item>-->
     </style>
 
-
     <style name="HomeStarViewStyle" parent="@android:style/Widget.RatingBar">
         <item name="android:progressDrawable">@drawable/home_star_view_selector</item>
         <item name="android:minHeight">16dp</item>
         <item name="android:maxHeight">16dp</item>
+    </style>
+
+    <style name="baseNoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/white</item>
+        <item name="colorAccent">@color/llweiya_main_color</item>
+    </style>
+
+    <style name="noActionBarTheme" parent="baseNoActionBarTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="actionBarSize">44dp</item>
     </style>
 
 </resources>

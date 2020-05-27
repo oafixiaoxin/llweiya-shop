@@ -2,8 +2,11 @@ package com.llweiya.ysx.starchef.common.presenter;
 
 import android.content.Context;
 
+import com.llweiya.ysx.starchef.common.application.LlweiyaApp;
 import com.llweiya.ysx.starchef.common.interactor.BaseInteractor;
 import com.llweiya.ysx.starchef.common.view.BaseView;
+
+import java.lang.ref.WeakReference;
 
 /**
  * Created by ysx on 2018/1/15.
@@ -11,7 +14,7 @@ import com.llweiya.ysx.starchef.common.view.BaseView;
 
 public class BasePresenter<I extends BaseInteractor, V extends BaseView> {
 
-    protected Context currentContext;
+    protected WeakReference<Context> weakCurrentContext;
     protected V view;
     protected I interactor;
 
@@ -24,9 +27,17 @@ public class BasePresenter<I extends BaseInteractor, V extends BaseView> {
     }
 
     public void initPresenter(Context context, V baseView, I interactor) {
-        this.currentContext = context;
+        this.weakCurrentContext = new WeakReference<>(context);
         this.view = baseView;
         this.interactor = interactor;
+    }
+
+    protected Context currentContext() {
+        Context context = weakCurrentContext.get();
+        if (context == null) {
+            context = LlweiyaApp.getAppComponent().getApplication();
+        }
+        return context;
     }
 
     public final static class Builder<I extends BaseInteractor, V extends BaseView> {

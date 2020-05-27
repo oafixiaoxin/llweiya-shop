@@ -1,0 +1,448 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:llweiya="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:id="@+id/llayout_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:fitsSystemWindows="false"
+        tools:context="com.llweiya.ysx.starchef.business.community.view.UserDefinedCourseActivity">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="false"
+            llweiya:statusBarBackground="@color/transparent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="false"
+                llweiya:layout_behavior="com.google.android.material.appbar.AppBarLayout$Behavior">
+
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fitsSystemWindows="false"
+                    llweiya:contentScrim="@color/white"
+                    llweiya:statusBarScrim="@color/white"
+                    llweiya:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:background="@color/white"
+                        llweiya:layout_collapseMode="parallax"
+                        llweiya:layout_collapseParallaxMultiplier="0.8">
+
+                        <ImageView
+                            android:id="@+id/image_course"
+                            android:layout_width="match_parent"
+                            android:layout_height="250dp"
+                            android:fitsSystemWindows="false"
+                            android:scaleType="centerCrop"/>
+
+                    </LinearLayout>
+
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/toolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?actionBarSize"
+                        llweiya:contentInsetLeft="0dp"
+                        llweiya:contentInsetRight="0dp"
+                        llweiya:contentInsetStart="0dp"
+                        llweiya:contentInsetEnd="0dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical">
+
+                            <ImageView
+                                android:id="@+id/image_operation"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginRight="@dimen/llweiya_margin"
+                                android:scaleType="centerCrop"
+                                android:layout_alignParentRight="true"
+                                android:src="@drawable/icon_course_operation"/>
+
+                        </RelativeLayout>
+
+                    </androidx.appcompat.widget.Toolbar>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                llweiya:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+                <com.llweiya.ysx.starchef.common.view.customview.LlweiyaCustomLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    llweiya:lwllyBackgroundColor="@color/white"
+                    llweiya:lwllyTopLeftRadius="10"
+                    llweiya:lwllyTopRightRadius="10">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/llweiya_margin"
+                        android:layout_marginRight="@dimen/llweiya_margin"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp"
+                        android:text="抹茶雪崩蛋糕"
+                        android:textSize="@dimen/llweiya_text_size_22"
+                        android:textColor="@color/llweiya_text_color_black"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/llweiya_margin"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="1111次收藏"
+                            android:textSize="@dimen/llweiya_text_size_12"
+                            android:textColor="@color/llweiya_text_color_placeholder"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/llweiya_margin"
+                            android:text="2222次浏览"
+                            android:textSize="@dimen/llweiya_text_size_12"
+                            android:textColor="@color/llweiya_text_color_placeholder"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginLeft="@dimen/llweiya_margin"
+                        android:layout_marginRight="@dimen/llweiya_margin"
+                        android:background="@color/llweiya_divider"/>
+                    
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="@dimen/llweiya_margin"
+                        android:layout_marginRight="@dimen/llweiya_margin"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="@dimen/llweiya_image_36"
+                            android:layout_height="@dimen/llweiya_image_36"
+                            android:src="@drawable/ic_avatar_normal"/>
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="_tristan_yan"
+                                android:textSize="@dimen/llweiya_text_size_14"
+                                android:textColor="@color/llweiya_text_color_subtitle"
+                                android:maxLines="2"
+                                android:ellipsize="end"
+                                android:lineSpacingExtra="8dp"
+                                android:includeFontPadding="false"/>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="5dp"
+                                android:text="2020年5月26日"
+                                android:textSize="@dimen/llweiya_text_size_12"
+                                android:textColor="@color/llweiya_text_color_placeholder"
+                                android:includeFontPadding="false"/>
+
+                        </LinearLayout>
+                        
+                        <com.llweiya.ysx.starchef.common.view.customview.LlweiyaCustomButton
+                            android:id="@+id/btn_subscribe"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingTop="3dp"
+                            android:paddingBottom="3dp"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
+                            android:minWidth="80dp"
+                            android:text="关注"
+                            android:textSize="@dimen/llweiya_text_size_16"
+                            android:textColor="@color/llweiya_text_color_black"
+                            android:gravity="center"
+                            llweiya:llbtnBackgroundColor="@color/llweiya_main_color"
+                            llweiya:llbtnRadius="12dp"
+                            llweiya:llbtnSelectedBackgroundColor="@color/white"
+                            llweiya:llbtnStrokeColor="@color/llweiya_main_color"
+                            llweiya:llbtnStrokeWidth="1dp"/>
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:layout_marginLeft="@dimen/llweiya_margin"
+                        android:layout_marginRight="@dimen/llweiya_margin"
+                        android:text="A Pink出道前就拍摄了High Cut的杂志照并且签约Cottiny和Ceylon Tea担任代言人。她们当了一年半的练习生，而且获得2009年的Cube Stars Party的佳评得到出道契机。2010年8月在CUBE Star Party初亮相。由于她们出道前的训练十分繁忙，无法兼顾身材，所以饮食控制很严厉。成员朴初珑在指导过金泰源的忠洲声乐训练家梁正模那里学习了两三个月才去当练习生，梁正模之后参与了节目伟大的诞生，而成员郑恩地没有正规训练的经验则是透过试镜后在2010年11月成为主唱。"
+                        android:textSize="@dimen/llweiya_text_size_16"
+                        android:textColor="@color/llweiya_text_color_subtitle"
+                        android:lineSpacingExtra="8dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="@dimen/llweiya_margin">
+
+                        <TextView
+                            android:id="@+id/txt_material"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:text="用料"
+                            android:textSize="@dimen/llweiya_text_size_22"
+                            android:textColor="@color/llweiya_text_color_black"
+                            android:textStyle="bold"
+                            android:layout_centerVertical="true"/>
+                        
+                        <View
+                            android:layout_width="45dp"
+                            android:layout_height="4dp"
+                            android:layout_marginTop="34dp"
+                            android:background="@color/llweiya_main_color"/>
+
+                    </RelativeLayout>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/llweiya_margin"
+                        android:layout_marginRight="@dimen/llweiya_margin"
+                        android:layout_marginBottom="10dp"
+                        llweiya:cardBackgroundColor="@color/white"
+                        llweiya:cardCornerRadius="8dp"
+                        llweiya:cardElevation="2dp"
+                        llweiya:cardPreventCornerOverlap="false">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_menu"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:scrollbars="none"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="@dimen/llweiya_margin">
+
+                        <TextView
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:text="教程"
+                            android:textSize="@dimen/llweiya_text_size_22"
+                            android:textColor="@color/llweiya_text_color_black"
+                            android:textStyle="bold"
+                            android:layout_centerVertical="true"/>
+
+                        <View
+                            android:layout_width="45dp"
+                            android:layout_height="4dp"
+                            android:layout_marginTop="34dp"
+                            android:background="@color/llweiya_main_color"/>
+
+                    </RelativeLayout>
+
+                    <TextView
+                        android:id="@+id/txt_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/llweiya_margin"
+                        android:layout_marginRight="@dimen/llweiya_margin"
+                        android:layout_marginBottom="@dimen/llweiya_margin"
+                        android:textSize="@dimen/llweiya_text_size_14"
+                        android:textColor="@color/llweiya_text_color_subtitle"
+                        android:includeFontPadding="false"
+                        android:textAllCaps="false"
+                        android:lineSpacingExtra="8dp"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/llweiya_margin"
+                        android:layout_marginRight="@dimen/llweiya_margin"
+                        android:layout_marginBottom="@dimen/llweiya_margin"
+                        android:orientation="horizontal">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_tag"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="3"
+                            android:scrollbars="none"/>
+
+                        <TextView
+                            android:id="@+id/txt_update_time"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="2"
+                            android:textSize="@dimen/llweiya_text_size_12"
+                            android:textColor="@color/llweiya_text_color_placeholder"
+                            android:gravity="end"/>
+
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginLeft="@dimen/llweiya_margin"
+                        android:layout_marginRight="@dimen/llweiya_margin"
+                        android:background="@color/llweiya_divider"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="@dimen/llweiya_padding"
+                        android:paddingLeft="@dimen/llweiya_padding"
+                        android:paddingRight="@dimen/llweiya_padding"
+                        android:orientation="horizontal"
+                        android:gravity="bottom">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="3dp"
+                                android:layout_height="20dp"
+                                android:background="@color/llweiya_main_color"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:text="热门点评"
+                                android:textSize="@dimen/llweiya_text_size_22"
+                                android:textColor="@color/llweiya_text_color_black"
+                                android:textStyle="bold"/>
+
+                            <LinearLayout
+                                android:id="@+id/llayout_comment_check_more"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal"
+                                android:gravity="center_vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/txt_comment_count"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:textSize="@dimen/llweiya_text_size_12"
+                                    android:textColor="@color/llweiya_text_color_placeholder"/>
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_more_gray"/>
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_view_comment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/llweiya_margin"
+                        android:layout_marginRight="@dimen/llweiya_margin"
+                        android:scrollbars="none"/>
+
+                    <LinearLayout
+                        android:id="@+id/llayout_user_relevant"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/llweiya_margin"
+                        android:layout_marginRight="@dimen/llweiya_margin"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="@dimen/llweiya_margin"
+                            android:orientation="horizontal"
+                            android:gravity="center_vertical">
+
+                            <View
+                                android:layout_width="3dp"
+                                android:layout_height="20dp"
+                                android:background="@color/llweiya_main_color"/>
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:layout_marginLeft="5dp"
+                                android:text="作者其他菜谱"
+                                android:textSize="@dimen/llweiya_text_size_22"
+                                android:textColor="@color/llweiya_text_color_black"
+                                android:textStyle="bold"/>
+
+                        </LinearLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recycler_view_user_relevant"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="none"/>
+
+                    </LinearLayout>
+
+                </com.llweiya.ysx.starchef.common.view.customview.LlweiyaCustomLinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+        <View
+            android:id="@+id/view_status"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"/>
+
+    </RelativeLayout>
+
+</layout>

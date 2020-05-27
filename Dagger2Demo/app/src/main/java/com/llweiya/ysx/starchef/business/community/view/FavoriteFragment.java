@@ -1,8 +1,11 @@
 package com.llweiya.ysx.starchef.business.community.view;
 
 import android.content.Context;
+
+import androidx.annotation.NonNull;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
@@ -26,9 +29,8 @@ import java.util.List;
 
 import javax.inject.Inject;
 
-/**
- * A simple {@link Fragment} subclass.
- */
+import timber.log.Timber;
+
 public class FavoriteFragment extends Fragment implements FavoriteView, SwipeRefreshLayout.OnRefreshListener {
 
     @Inject
@@ -84,12 +86,30 @@ public class FavoriteFragment extends Fragment implements FavoriteView, SwipeRef
         adapter = new FavoriteItemAdapter();
         favoriteBinding.recyclerView.setAdapter(adapter);
         favoriteBinding.recyclerView.setItemAnimator(null);
+        favoriteBinding.swipeRefreshLayout.setOnRefreshListener(this);
 //        favoriteBinding.recyclerView.addItemDecoration(new StaggeredItemDecoration.Builder()
 //                .setContext(getActivity())
 //                .setLeftPadding(10)
 //                .setBottomPadding(10)
 //                .setRightPadding(5)
 //                .build());
+        favoriteBinding.recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
+                switch (newState) {
+                    case RecyclerView.SCROLL_STATE_IDLE:
+                        favoriteBinding.fab.extend();
+                        break;
+                    case RecyclerView.SCROLL_STATE_DRAGGING:
+                    case RecyclerView.SCROLL_STATE_SETTLING:
+                        favoriteBinding.fab.shrink();
+                        break;
+                    default:
+                        break;
+                }
+                super.onScrollStateChanged(recyclerView, newState);
+            }
+        });
     }
 
     @Override

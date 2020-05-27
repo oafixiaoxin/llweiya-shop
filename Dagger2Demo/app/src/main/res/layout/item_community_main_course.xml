@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/llweiya_padding"
+    android:paddingRight="@dimen/llweiya_padding"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <View
+            android:layout_width="4dp"
+            android:layout_height="18dp"
+            android:background="@color/llweiya_main_color"/>
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="2dp"
+            android:textSize="@dimen/llweiya_text_size_16"
+            android:textColor="@color/llweiya_text_color_black"
+            android:textStyle="bold"
+            android:gravity="center_vertical"
+            tools:text="@string/text_recommend_course"/>
+
+        <LinearLayout
+            android:id="@+id/llayout_check_more"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/text_check_all"
+                android:textSize="@dimen/llweiya_text_size_14"
+                android:textColor="@color/llweiya_text_color_placeholder"
+                android:gravity="center_vertical"/>
+
+            <ImageView
+                android:layout_width="@dimen/llweiya_icon_size_16"
+                android:layout_height="@dimen/llweiya_icon_size_16"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_more_gray"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"/>
+
+</LinearLayout>

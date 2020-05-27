@@ -31,8 +31,6 @@ public class ImageUtil {
         } catch (Exception exception) {
             Timber.e(exception.getMessage());
         }
-
-
     }
 
 }

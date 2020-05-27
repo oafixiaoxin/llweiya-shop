@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.llweiya.ysx.starchef.common.view.customview.LlweiyaCustomLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:llweiya="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/root"
+    android:layout_width="wrap_content"
+    android:layout_height="20dp"
+    android:paddingLeft="5dp"
+    android:paddingRight="5dp"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    llweiya:lwllyBackgroundColor="@color/llweiya_divider"
+    llweiya:lwllyRadius="10dp">
+
+    <com.llweiya.ysx.starchef.common.view.customview.LlweiyaCustomLinearLayout
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:orientation="horizontal"
+        llweiya:lwllyBackgroundColor="@color/llweiya_main_color"
+        llweiya:lwllyRadius="5dp"/>
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:textSize="@dimen/llweiya_text_size_12"
+        android:textColor="@color/llweiya_text_color_subtitle"
+        android:includeFontPadding="false"/>
+
+</com.llweiya.ysx.starchef.common.view.customview.LlweiyaCustomLinearLayout>

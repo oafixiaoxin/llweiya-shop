@@ -55,6 +55,7 @@ public abstract class BaseActivity<B extends ViewDataBinding> extends AppCompatA
         super.onCreate(bundle);
 
         setupComponent(LlweiyaApp.getAppComponent(), new BaseModule(this, this));
+        injectComponent();
 
         if (this.getLayoutId() > 0) {
             View rootView = getLayoutInflater().inflate(this.getLayoutId(), null, false);
@@ -67,13 +68,13 @@ public abstract class BaseActivity<B extends ViewDataBinding> extends AppCompatA
 
         onCreateSubView(bundle);
 
-        if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
-            StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.white), true);
-        } else {
-            StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.llweiya_text_color_gray), true);
+        if (!selfDefineStatus()) {
+            if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
+                StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.white), true);
+            } else {
+                StatusBarCompat.setStatusBarColor(this, getResources().getColor(R.color.llweiya_text_color_gray), true);
+            }
         }
-
-        injectComponent();
 
     }
 
@@ -108,6 +109,10 @@ public abstract class BaseActivity<B extends ViewDataBinding> extends AppCompatA
 
     public void setNeedElevation(){
 
+    }
+
+    protected boolean selfDefineStatus() {
+        return false;
     }
 
     @Override

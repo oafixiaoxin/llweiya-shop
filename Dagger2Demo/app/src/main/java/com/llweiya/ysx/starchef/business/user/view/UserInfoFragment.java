@@ -162,8 +162,8 @@ public class UserInfoFragment extends Fragment {
         }
     }
 
-    @CheckLogin
+//    @CheckLogin
     private void toChatRoomPage() {
-
+        LWRouter.go(getActivity(), RouterConfig.NEWLOGIN);
     }
 }

@@ -12,6 +12,17 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         multiDexEnabled true
+
+        ndk {
+            abiFilters 'armeabi-v7a'   //abiFilter 'armeabi, x86'
+        }
+        splits {
+            abi {
+                enable false
+                reset()
+                include 'armeabi-v7a'
+            }
+        }
     }
 
     signingConfigs {

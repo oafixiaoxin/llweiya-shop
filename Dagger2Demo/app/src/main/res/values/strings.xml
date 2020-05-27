@@ -31,6 +31,10 @@
     <string name="toast_exit_app">再按一次退出程序</string>
 
     <string name="text_language">语言</string>
+    <string name="text_publish">发布</string>
+    <string name="text_normal_course">教程</string>
+    <string name="text_recommend_course">推荐教程</string>
+    <string name="text_check_all">查看全部</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

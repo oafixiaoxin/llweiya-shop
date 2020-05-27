@@ -3,4 +3,30 @@
     <declare-styleable name="NoScrollViewPager">
         <attr name="scrollable" format="boolean"/>
     </declare-styleable>
+
+    <declare-styleable name="LlweiyaCustomLinearLayout">
+        <attr format="dimension" name="lwllyRadius"/>
+        <attr format="integer" name="lwllyTopLeftRadius"/>
+        <attr format="integer" name="lwllyTopRightRadius"/>
+        <attr format="integer" name="lwllyBottomLeftRadius"/>
+        <attr format="integer" name="lwllyBottomRightRadius" />
+        <attr format="color" name="lwllyBackgroundColor" />
+        <attr format="color" name="lwllySelectedBackgroundColor" />
+        <attr format="color" name="lwllyDisabledColor" />
+        <attr format="dimension" name="lwllyStrokeWidth"/>
+        <attr format="color" name="lwllyStrokeColor"/>
+    </declare-styleable>
+
+    <declare-styleable name="LlweiyaCustomButton">
+        <attr format="dimension" name="llbtnRadius"/>
+        <attr format="integer" name="lltnTopLeftRadius"/>
+        <attr format="integer" name="llbtnTopRightRadius"/>
+        <attr format="integer" name="llbtnBottomLeftRadius"/>
+        <attr format="integer" name="llbtnBottomRightRadius" />
+        <attr format="color" name="llbtnBackgroundColor" />
+        <attr format="color" name="llbtnSelectedBackgroundColor" />
+        <attr format="color" name="llbtnDisabledBackgroundColor" />
+        <attr format="dimension" name="llbtnStrokeWidth"/>
+        <attr format="color" name="llbtnStrokeColor"/>
+    </declare-styleable>
 </resources>

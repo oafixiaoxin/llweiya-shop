@@ -20,11 +20,15 @@
     <string name="hint_login_phone">Input phone number</string>
     <string name="hint_login_password">password length limited in 10~20</string>
     <string name="hint_verify_code">verify code</string>
-    <string name="hint_search_key_word">key word search</string>
+    <string name="hint_search_key_word">SEARCH</string>
 
     <string name="toast_exit_app">Press again to exit the app.</string>
 
     <string name="text_language">Language</string>
+    <string name="text_publish">PUBLISH</string>
+    <string name="text_normal_course">COURSE</string>
+    <string name="text_recommend_course">RECOMMENDED COURESES</string>
+    <string name="text_check_all">ALL</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

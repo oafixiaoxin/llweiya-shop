@@ -14,4 +14,6 @@ public class RouterConfig {
 
     public static final String ORDERDETAIL = "order_detail";
     public static final String PAYORDER = "pay_order";
+
+    public static final String USERDEFINEDCOURSE = "user_defined_course";
 }
